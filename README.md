@@ -1,2 +1,3 @@
 **POZNÁMKY**
-GIT = systém který
+GIT = systém pro trackování souborů v čase
+
