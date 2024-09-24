@@ -1,0 +1,2 @@
+**POZNÁMKY**
+GIT = systém který
