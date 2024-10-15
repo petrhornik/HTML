@@ -1,0 +1,149 @@
+/* pouzivame moderni box model */
+html { box-sizing: border-box; }
+*, :after, :before { box-sizing: inherit; }
+
+/* barvy */
+:root {
+	--svetla: #edf3f5;
+	--seda: #b2bec3;
+	--tmava: #636e72;
+	--oranzova: #ee5a24;
+	--cervena: #ea2027;
+	--zluta: #f79f1f;
+	--zelena: #a3cb38;
+	--limetka: #c4e538;
+}
+
+/* písma */
+/*
+font-family: 'Alice', serif;
+font-family: 'Kaushan Script', cursive;
+*/
+
+
+body {
+	margin: 0;
+	padding: 30px;
+	font-family:  'Alice', serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+h1, h2, h3 {
+	font-family: 'Kaushan Script', cursive;
+	font-weight: normal;
+	margin: 0;
+}
+
+blockquote {
+	font-family: 'Kaushan Script', cursive;
+}
+
+/* --------------------------------------------------- */
+.blog{
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr;
+  gap: 20px 40px;
+}
+
+h1, h2, p{
+  grid-column: 2/3;
+}
+
+h1{
+  color: var(--zelena));
+  font-size: 90px;
+  line-height: 1.2;
+  margin: 50px 0;
+}
+
+.author{
+  margin: 0;
+  color: var(--seda);
+}
+
+p{
+  margin: 0;
+}
+
+.tip{
+  font-size: 15px;
+  background-color: #edf3f5;
+  color: #636e72;
+  padding: 20px;
+  align-self: start;
+}
+
+a {
+  color: var(--oranzova);
+}
+
+.left{
+  grid-column: 1/2;
+  border-right: 2px solid var(--zluta);
+}
+
+.right{
+  grid-column: 3/4;
+  border-left: 2px solid var(--zluta);
+}
+
+.left-img{
+  grid-row: 17/19;
+}
+
+img{
+  width: 100%;
+}
+
+.tip img{
+  margin-bottom: 10px;
+}
+
+figure, blockquote, .footer{
+  grid-column: 1/-1;
+}
+
+figure{
+  padding: 0;
+  margin: 0;
+}
+
+figure figcaption{
+  color: var(--seda);
+}
+
+blockquote{
+  font-size: 36px;
+  padding: 0;
+  text-align: center;
+  color: var(--seda);
+}
+
+blockquote::before,
+blockquote::after{
+  content: "";
+  display: block;
+  width: 10%;
+  height: 2px;
+  background-color: var(--limetka);
+  margin: 25px auto;
+}
+
+h2{
+  font-size: 60px;
+  color: var(--zelena);
+  line-height: 1;
+  margin: 30px 0 10px;
+}
+
+.footer{
+  color: var(--seda);
+  font-size: 14px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.footer a{
+  color: var(--tmava)
+}

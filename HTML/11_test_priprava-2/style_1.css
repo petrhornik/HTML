@@ -1,0 +1,122 @@
+/* pouzivame moderni box model */
+html { box-sizing: border-box; }
+*, :after, :before { box-sizing: inherit; }
+
+/*základní velikost písma 20px, h1 90px, h2 60px, citaty 36px, tipy 15px, text v zapati 14px*/
+/*řádkování 1.5*/
+/*Písma:
+ - text: font-family: font-family: 'Alice', serif;
+ - nadpisy, citáty: font-family: 'Kaushan Script', cursive;
+/* barvy */
+:root {
+	--svetla: #edf3f5;
+	--seda: #b2bec3;
+	--tmava: #636e72;
+	--oranzova: #ee5a24;
+	--cervena: #ea2027;
+  --tmzelena: #1c5000;
+  --svzelena: #7bb67b;
+  --zelena: #347213;
+}
+
+/* --------------------------------------------------- */
+
+
+.blog{
+	display: grid;
+	grid-template-columns: 1fr 4fr 1fr;
+	gap: 0px 40px;
+}
+
+h1, h2, p{
+	grid-column: 2 / 3;
+	
+}
+
+.tip{
+	background-color: var(--svetla);
+}
+
+.tip-levy{
+	grid-column: 1 / 2;
+	border-right: brown solid;
+	color: var(--tmava);
+	
+}
+
+.tip p{
+	font-size: 15px;
+	margin: 20px;
+}
+
+.tip-obrazek{
+	grid-row: span 2;
+	margin-bottom: 0 px;
+}
+
+.tip-pravy{
+	grid-column: 3 / 4;
+	border-left: brown solid;
+	color: var(--tmava);
+}
+
+.tip img{
+	width: 80%;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+img{
+	width: 100%;
+}
+
+figure, figcaption{
+	grid-column: 1 / 4;
+	color: var(--svzelena);
+}
+
+
+blockquote{
+	grid-column: 1 / 4;
+	font-size: 45px;
+	padding: 0;
+	text-align: center;
+	color: var(--svzelena);
+	font-family: Kaushan Script;
+  }
+  
+  blockquote::before,
+  blockquote::after{
+	content: "";
+	display: block;
+	width: 10%;
+	height: 3px;
+	background-color: var(--cervena);
+	margin: 25px auto;
+  }
+
+h1{
+	color: var(--tmzelena);
+	font-family: Kaushan Script;
+	font-size: 60px;
+}
+
+h2{
+	color: var(--zelena);
+	font-family: Kaushan Script;
+	font-size: 50px;
+}
+
+.seda{
+	color: var(--svzelena);
+}
+
+p{
+	font-family: Alice;
+	font-size: 18px;
+}
+
+.zapati, .zapati a{
+	color: var(--seda);
+
+}

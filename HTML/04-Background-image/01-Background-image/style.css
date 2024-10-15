@@ -1,0 +1,16 @@
+/* nejsme vcerejsi, pouzivame moderni a intuitivni box model */
+html { box-sizing: border-box; }
+*, ::after, ::before { box-sizing: inherit; }
+
+
+.box {
+	width: 500px;
+	height: 500px;
+	margin: 100px auto;
+	border: 1px dashed grey;
+}
+
+/* ------------------------------------ */
+
+
+

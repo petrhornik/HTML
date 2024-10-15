@@ -1,0 +1,44 @@
+/* pouzivame moderni box model */
+*, :after, :before { box-sizing: border-box; }
+
+body {
+	font: 16px/1.5 sans-serif;
+	margin: 0;
+}
+
+/* barvicky elementů na stránce */
+header,
+footer {
+	background: yellowgreen;
+}
+
+aside {
+	background: beige;
+}
+
+nav {
+	background: lightsteelblue;
+}
+
+/* -------------------------------------------- */
+/* tady piš svoje CSS */
+/* -------------------------------------------- */
+
+.grid {
+	height: 100vh; /* nastavíme výšku gridu přes celou stránku */
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(10, 1fr);
+}
+
+nav{
+	grid-area: 1 / 1 / 11 / 3;
+}
+
+header{
+	grid-area: 1 / 3 / 3 / 11;
+}
+
+aside{
+	
+}

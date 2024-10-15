@@ -1,0 +1,88 @@
+/* používáme typ box modelu border-box */
+html{
+    box-sizing: border-box
+}
+
+*, ::after, ::before{
+    box-sizing: inherit;
+}
+
+:root{
+    --svetla: #edf3f5;
+    --seda: #b2bec3;
+    --tmava: #636e72;
+    --zelena: #a3cb38;
+    --oranzova: #ee5a24;
+}
+
+body{font-family: 'Roboto', sans-serif;
+    color:var(--tmava);                     /* Barva písma v body */
+    background-color: var(--svetla);        /*barva pozadi */
+    font-size: 20;                          /*velikost pisma*/
+    margin: 0;                              /* margin značí velikost okrajů */
+}
+
+header{                                     /* header je záhlaví*/
+    background-color: var(--zelena);
+}
+
+h1{font-family: 'Merriweather', serif;      /* h1 je nadpis h2 podnatpis h3 podnatpis podnatpisu ... a <p> je text */
+    color: var(--oranzova);
+    margin: 0;
+}
+header h2{
+    color: var(--oranzova); /* var() piše se do toho proměnná */
+    font-weight: 300;
+    font-style: italic;
+}
+
+nav{
+    text-align: center;
+    position: sticky;
+    top: 0;
+    
+}
+
+nav ul li{
+    display: inline-block;
+}
+/*navigační panel který obsahuje seznam (ul) tvořený jednotlivými položkami (li), káždá položka obsahuje odkaz (a)*/
+nav ul li a{  
+    color:var(--zelena);
+    font-size:24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 10px;
+}
+
+nav ul li a:hover{              
+    color:var(--oranzova)
+}
+
+section.omne, section.fotogalerie{
+    background-color:var(--seda)
+}
+
+section.portfolio, section.kontakt{
+    background-color:var(--svetla)
+}
+
+section{
+    padding: 15px 15%;
+}
+
+footer{
+    text-align: center;
+}
+
+.photo{
+    width: 100px;
+    float: left;
+    margin: 10px 20px 0 0;
+    border-radius: 0%;
+
+}
+
+.clear{
+    clear: both;
+}

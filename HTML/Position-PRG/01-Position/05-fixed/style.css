@@ -1,0 +1,33 @@
+.hlavicka {
+	/* napozicuj hlavičku fixně k hornímu okraji stránky */
+position: fixed;
+
+left: 0px;
+top: 0px;
+}
+
+
+.paticka {
+	/* napozicuj patičku fixně k dolnímu okraji stránky */
+	position: fixed;
+	
+	bottom: 0px;
+	left: 0px;
+
+}
+
+
+.poznamka {
+	/* napozicuj poznámku k pravému okraji okraji stránky */
+	position: fixed;
+	right: 0px;
+	bottom: center;
+
+}
+
+.text {
+
+	position: fixed;
+	left: 350px;				/*dá se použít i padding*/
+	right: 350px;
+}

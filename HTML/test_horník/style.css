@@ -1,0 +1,108 @@
+body{
+    margin: 0px;
+}
+
+header{
+    margin: 0px;
+    text-align: center;
+    background-color: cornflowerblue;
+
+}
+header h1{
+    margin: 0px;
+}
+
+nav{
+    position: sticky;
+    top: 0px;
+    background-color: burlywood;
+    text-align: center;
+}
+
+nav ul li{
+    display: inline-block;
+    text-align: center;
+}
+
+nav ul li a{
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: white;
+}
+
+nav ul li a:hover{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+footer{
+    position: sticky;
+    bottom: 0px;
+    text-align: center;
+    background-color: cornflowerblue;
+}
+
+footer p{
+    display: inline-block;
+    margin: 10px;
+}
+
+.ob{
+    width: 400px;
+    float: left;
+    clear: both;
+    border-radius: 0px;
+    margin-top: 7px;
+}
+
+table{
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+table th, table td{
+    border: 1px blue solid;
+    padding: 10px;
+}
+
+main{
+    background-color: cornsilk;
+    margin-top: -20px;
+}
+
+section.kontakt p{
+    margin: 2px;
+}
+
+section.kontakt, section.zivot, section.galery{
+    margin: 5px;
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+
+}
+
+h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    text-decoration: underline;
+    color: yellow;
+    margin-top: 10px;
+}
+h2{
+    font-family: 'Sometype Mono', monospace;
+    text-decoration: underline;
+}
+
+.xd{
+    width: 500px;
+}
+
+.galery{
+    width: 1200px;
+}

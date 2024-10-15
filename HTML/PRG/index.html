@@ -1,0 +1,55 @@
+<!DOCTYPE html> <!-- když napíšeme ! a dáme ENTER tak se vytvoří základní struktura webu -->
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"> 
+    <title>Projekt</title>
+</head>
+<body>
+    <header>
+        <h1>Nadpis</h1>             <!--<header> znamená záhlaví a <footer> je zápatí-->
+        <p>Lorem ipsum dolor sit amet.</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#omne">O mně</a></li>                  <!--<li> položka seznamu-->
+            <li><a href="#portfolio">Portfólio</a></li>         
+            <li><a href="#fotogalerie">Fotogalerie</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="omne" class="omne">     <!--<section> mní dělit text na jednotlivé sekce. Když přidáme id <section id=""> tak mužeme sekci propojit s linkem např: <-<li><a href="#omne">O mně</a></li> a <section id=omne> a link nás přesměruje na danou sekci. DO ID V SECTION SE NEPÍŠE #!!!-->
+            <h2>O mně</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, tenetur?</p>
+        </section>
+        <section id="portfolio" class="portfolio">
+            <h2>Portfólio</h2>
+            <img class="photo" src="images/bash.png" alt="TERM">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, quisquam quibusdam. Dolore dignissimos, nemo consequatur amet dicta minus necessitatibus odio.</p>
+            <div class="clear"></div>
+        </section>
+        <section id="fotogalerie" class="fotogalerie">
+            <h2>Fotogalerie</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, molestias!</p>
+            <img src="images/tux.png" alt="LINUX FOREVER!!!">
+        </section>
+        <section id="kontakt" class="kontakt">
+            <h2>Kontakt</h2>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </section>
+    </main>
+<footer>
+    <p>&copy;Created by Petr Horník
+        Image by <a href="https://pixabay.com/users/openclipart-vectors-30363/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=148836">OpenClipart-Vectors</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=148836">Pixabay</a>
+        Image by <a href="https://pixabay.com/users/lukrate-607309/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1531289">Boby Pogy</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1531289">Pixabay</a>
+    </p> <!-- &copy udělá entitu copyrightu -->
+</footer>
+</body>
+</html>

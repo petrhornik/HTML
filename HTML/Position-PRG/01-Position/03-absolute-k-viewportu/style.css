@@ -1,0 +1,8 @@
+
+.absolute {
+    /* zde dopiš absolutní pozicovaní prvku na stránce */
+position: absolute;
+bottom: 0;
+right: 0;
+
+}

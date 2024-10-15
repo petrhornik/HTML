@@ -1,0 +1,7 @@
+Zdravím, 
+
+Tvým ukolem je použít flexbox a hezky naskládat barevné
+obdélníky vedle sebe - se správnou velikostí, ve správném
+pořadí. Požadovaný výsledek vidíš vždy na obrázku.
+
+Ať se práce daří :-)

@@ -1,0 +1,46 @@
+/* intuitivnejsi box-sizing */
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+body {
+	font-family: sans-serif;
+}
+
+.sloupec {
+	padding: 20px;
+}
+
+.hlavicka	{ background-color: #2ecc71; }
+.hlavni		{ background-color: #f1c40f; }
+.levy			{ background-color: #3498db; }
+.pravy		{ background-color: #e74c3c; }
+.paticka	{ background-color: #9b59b6; }
+
+/* ---------------------------------------------------- */
+
+.kontejner{
+	display: grid;
+	gap: 10px;
+}
+
+.hlavicka{
+	grid-area: 1 / 1 / 3 / 12;
+}
+
+.levy{
+	grid-area: 3 / 1 / 4 / 2;
+}
+.hlavni{
+	grid-area: 3 / 2 / 4 / 11;
+}
+
+.pravy{
+	grid-area: 3 / 11 / 4 / 12;
+}
+
+.paticka{
+	grid-area: 4 / 1 / 5 / 12;
+}
+
+/*gap - ve vždy píše nadřazenému např. kontejneru či body
+		- vytváří mezery mezi jednotlivými položkami*/

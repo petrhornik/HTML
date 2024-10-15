@@ -1,0 +1,56 @@
+/* pouzivame moderni box model */
+html { box-sizing: border-box;}
+*, ::after, ::before { box-sizing: inherit; }
+
+.kontejner > div {
+	padding: 20px;
+	font: 24px/1 sans-serif;
+	color: white;
+}
+
+.kontejner > div > :first-child {
+	margin-top: 0;
+}
+
+.kontejner > div > :last-child {
+	margin-bottom: 0;
+}
+
+
+/* ---------------------------------------------------- */
+
+/* Nastyluj jednotlivé bloky podle zadání na obrázku */
+
+.kontejner{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 100px repeat(3, auto) 250px 100px;
+	gap: 20px;
+}
+
+.logo{
+	background-color: greenyellow;
+	grid-area: 1 / 1 / 2 / 4;
+}
+
+.hlavicka{
+	grid-area: 1 / 4 / 2 / 12;
+	background-color: lightblue;
+}
+
+.menu{
+	grid-row: 2,  auto ;
+	grid-column: 1 / 4;
+	background-color: red;
+}
+
+.clanek1{
+	grid-column: 4 / 12 ;
+	grid-row: 2 / auto;
+	background-color: orange;
+}
+
+.reklama1{
+	grid-column: 1 / 4;
+	grid-row: 3 / auto;
+}
