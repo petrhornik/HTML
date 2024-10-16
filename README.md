@@ -1,3 +1,2 @@
-**POZNÁMKY**
-GIT = systém pro trackování souborů v čase
-testovací zpráva
+**HTML POZNÁMKY T2A/T3A**
+- 
