@@ -12,10 +12,28 @@ body {
 	line-height: 1.5;
 }
 
-/* zde můžu psát komentář */
+/* Padding = zvětšuje prvekse všemi style úpravami v nezávislosti na ostatních věcech, může zakrýt ostatní prvky
+	Margin = zvětšuje obraj prvku v závislosti na ostatních, nemůže zakrýt ostatní prvky, místo zakrytí prvku ho posune  
+	Barvy pomocí RGB(A) zadáváme v desítkové soustabě resp. 0-255*/
 
 
+.box{
+	box-sizing: border-box;
+	width: 600px;
+	margin: 50px auto;
+	border: 2px black solid;
+	padding: 30px;
+}
 
+.nadpis{
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
+.odstavec2{
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
 
 
 

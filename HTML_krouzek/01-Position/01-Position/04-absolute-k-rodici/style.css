@@ -1,15 +1,16 @@
 
 .rodic {
     /*
-    co musi mit nastaveno rodic,
-    aby v ramci nej fungovalo absolutni pozicovani?
+    musí!!! být nastavena relativní pozice!!! aby to fungovalo
     */
+    position: relative;
 
 }
 
 .potomek {
-    /* zde dopis absolutni pozicovani potomka */
-
+    /* bude se pozicovat pouze v závislosti na rodiči ve vymezeném prostoru rodiče */
+    position: absolute;
+    right: 0px;
 }
 
 

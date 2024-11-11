@@ -4,7 +4,9 @@
     napozicuj box tak, aby se při skrolování
     zastavil o horní okraj stránky
     */
-
+    position: sticky;
+    top: 0px;
+/*když pojedeme po stránce dolů či nahoru a prvek by už neměl být vidět tak se "nalepí" tam kde mu je určeno(nejčastěji na vršek, popřípadě spodek stránky)*/
 }
 
 

@@ -1,6 +1,11 @@
 
 .absolute {
     /* zde dopiš absolutní pozicovaní prvku na stránce */
-
+    position: absolute;
+    right: 0px;
+    top: 240px;
 
 }
+
+/*Prvek s absolutním pozicováním bude vyjmut z jeho původní pozice(sice zůstane na stejném místě, 
+ale zbytek se srovná tak jako kdyby tam nebyl), poté pokud budu pozicovat tak se prvek bude pozicovat na základě celého body*/

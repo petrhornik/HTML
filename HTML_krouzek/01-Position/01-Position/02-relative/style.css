@@ -1,6 +1,9 @@
 
 .relative {
     /* zde dopiš relativní pozicování prostředniho obdélníku  */
-
-
+    position: relative;
+    top: -100px;
+    right: -200px;
 }
+
+/*Pozicování pomocí relative - s prvkem můžu volně hýbat pomocí top, bottom, left, right*/

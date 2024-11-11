@@ -5,8 +5,9 @@
 
 
 .paticka {
-	/* napozicuj patičku fixně k dolnímu okraji stránky */
-
+	/* pozicuje se v závislosti na obrazovce, v dané pozici se zafixuje a nikam se nepohne(ať už stránku otevřu na mobilu, pc, tabletu, atd. tak tento prvek se bude zobrazovat v levém dolním rohu)*/
+	position: fixed;
+	bottom: 0px;
 }
 
 
