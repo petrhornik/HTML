@@ -1,2 +1,0 @@
-**HTML POZNÁMKY T2A/T3A**
-- 
