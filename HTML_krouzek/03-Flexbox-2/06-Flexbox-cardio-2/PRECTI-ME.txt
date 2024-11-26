@@ -1,0 +1,33 @@
+Pěkný den všem.
+
+Dnes si vyzkoušíte nakódovat spoustu layoutů pomocí
+flexboxu!
+
+V každé složce máte zadání úkolu ve formě obrázku
+a připravený "prázdný" HTML a CSS soubor.
+
+Musíš si sám / sama napsat HTML tak, abys ho pak uměl/a
+nastylovat v CSS přesně podle obrázku. Samozřejmě
+pomocí flexboxu.
+
+Na velikostech sloupců nijak zvlášť nezáleží, ale
+berte to tak, že ty "úzké" sloupce na obrázcích
+zabírají vždy 20% šířky obrazovky (nebo 20vw).
+Jsou-li vodorovně (hlavička, patička), mají výšku
+20% okna prohlížeče (neboli 20vh).
+
+Pro hlavní bloky celé stránky použij sémantické značky
+<header>, <footer>, <article>, <nav>, <aside>
+
+Občas je budeš muset zabalit do dalšího <div>u,
+protože některé layouty používají do sebe vnořené
+flexboxy.
+
+V prvním příkladu máš HTML připravené, abys měl/a
+představu, co po vás chci. CSS už ale vymysli sám / sama.
+Samotný CSS kód je většinou velmi krátký.
+
+Tvým úkolem je hlavně MYSLET!
+
+Hodně štěstí při plnění úkolů přeje 
+Vaše učitelka Míla Skalová :-)

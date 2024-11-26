@@ -30,4 +30,10 @@ vždy bysmě měli mít 0 vulnerabilities
  -píšeme sem kód
 
 
+**instalace packagů z npm**
+  - pokud se po instalaci vypíše WARN - tak logicky jen varuje a te to gut
+  - pokud se po instalaci vypíše ERR - tak velký špatný!!!!
+
+  - --save-dev ulož instalovaný balíček do vývojářských závislostí = balíček nebude potřeba pro výslednou fci
+
 
