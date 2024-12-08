@@ -1,0 +1,15 @@
+{
+  "name": "hokuspokus-eleventy",
+  "version": "1.0.0",
+  "description": "Muj 1. eleventy web",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "serve": "npx @11ty/eleventy --serve"
+  },
+  "author": "P. Horník",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
