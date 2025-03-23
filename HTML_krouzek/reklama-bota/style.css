@@ -109,13 +109,20 @@ body{
     list-style-type: none; /*určuje druh/typ listu*/
     display: flex;
     justify-content: space-between; /*určuje jak se obsah dané class srovná*/
+    align-items: center;
+}
+
+.velikosti li{
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
 }
 
 .vybrana{
     color: red;
     border: 1px solid red;
     border-radius: 50%;
-    padding: 10px;
 }
 
 .akce{
@@ -130,5 +137,7 @@ body{
     text-decoration: none;
     padding: 15px;
     border-radius: 10px;
-    font-weight: 500;   
+    letter-spacing: 0.5; /* upravuje mezery mezi písmeny */
+    text-transform: uppercase;   
+    font-weight: 600;
 }

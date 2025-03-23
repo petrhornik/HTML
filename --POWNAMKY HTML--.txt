@@ -1,0 +1,5 @@
+--POWNAMKY HTML--
+
+! = vytvoří základní strukturu webu
+
+<link rel="stylesheet" href="css/style.css"> = propojíme .css a .html soubory kvůli vzhledu
