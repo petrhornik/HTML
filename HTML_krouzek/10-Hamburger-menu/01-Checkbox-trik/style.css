@@ -1,0 +1,60 @@
+/* intuitivnejsi box-sizing */
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+body {
+	font-family: sans-serif;
+	font-size: 18px;
+}
+
+/* ------------------------------------- */
+
+.check{ /*odkazujeme přímo na konkrétní čtvereček*/
+	/*display: none; skrytí checkboxu*/
+	/*width: 0px;
+	height: 0px;
+	opacity: 0;  alternativní způsob skrytí checkboxu*/
+	position: absolute;
+	left: -9999px; /*nejvíce používaný zp. (nevim proč) - čtvereček odsune ze stránky pryč*/
+}
+/*
+.check:checked + label .boxik { /*změna vzhledu POKUD je čtvereček zaškrtnutý
+	background-color: red;
+}
+
+.boxik{
+	display: inline-block;
+	width: 0.6em;
+	height: 0.6em;
+	border: 2px solid blue;
+	background-color: yellow;
+	border-radius: 50%;
+}
+
+label{
+	display: inline-block;
+	border: 1px solid gray;
+	padding: 10px;
+	background-color: lightgrey;
+	border-radius: 30px;
+}
+*/
+.box{
+	border: 1px solid black;
+	padding: 20px;
+	background-color: lightcyan;
+}
+
+.box label{
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.box .text{
+	margin-top: 10px;
+	display: none;
+}
+
+.check:checked ~ .text{
+	display: block;
+}

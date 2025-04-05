@@ -1,0 +1,61 @@
+/* intuitivnejsi box-sizing */
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+body {
+	font-family: sans-serif;
+	font-size: 18px;
+}
+
+/* ------------------------------------- */
+
+.menu__checkbox {
+	position: absolute;
+	left: -9999px;
+}
+
+.menu__list{
+	display: none;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	background-color: tomato;
+}
+
+.menu__item{
+	border-bottom: 1px solid white;
+}
+
+.menu__link{
+	display: block;
+	padding: 15px;
+	color: white;
+	text-decoration: none;
+}
+
+.menu__link:hover{
+	background-color: rgb(212, 69, 44);
+}
+
+.menu__checkbox:checked ~ .menu__list{
+	display: block;
+}
+
+.menu_toggler{
+	cursor: pointer;
+}
+
+@media screen and (min-width: 799px){
+	.menu__toggler{
+		display: none;
+	}
+
+	.menu__list{
+		display: flex !important; /
+	}
+
+	.menu__item{
+		border-bottom: 0;
+		border-right: 1px solid white;
+	}
+}
