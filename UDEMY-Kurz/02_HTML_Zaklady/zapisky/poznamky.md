@@ -61,3 +61,23 @@ tip
         uvnitř <li> už může být cokoliv (např.: klidně i list do listu XD)
                 
 tip - pokud chci zkopírovat ten samý řádek pod či nad sebe tak použiju ALT + SHIFT + sipka nahoru/dolu
+
+**<a> - hypertextové odkazy**
+
+    - vždy musí obsahovat "destinaci" <- pro toto použijeme atributy(= další specifikace pro komponenty, co píšeme do "otevírací" části tagu)
+            - použijeme atribut href="DESTINACE"
+    - mužeme odkazovat na další .html stránky které jsou součástí mého webu (href="nejaka_stranka.html")
+    - pokud chceme odkázat na nějakou web stránku co není součástí našeho webu tak vždy musí destinace začínat https:// (např.: href="https://www.google.com") - https:// říká že se nachází na internetu a není součástí mého webu (jestli tam dáme www je jedno, ALE radší ho tam dám :D)
+
+**<img> - vložení obrázku**
+
+    - nemá zavírací tag = vše se definuje do 1 tagu
+    - src="" <- atribut co odkazuje na obrázek co chci zobrazit(pokud chci vlastní obrázky tak je vložím do stejné složky jako .html soubory)
+    - alt="" <- specifikuje textově co je obrázek zač (vhodně třeba pro web. čtečky, nebo když se obr. nenačte tak si mužeme dle textu domyslet co tam bylo)
+
+    tip - všechny obrázky mamá většinou v nějaké složce pro lepší přehlednost kódu
+
+**komentář**
+
+    = text ignorovaný prohlížečem - zobrazí se pouze v kódu
+    - <!--SEM PÍŠEME KOMENT-->
