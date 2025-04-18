@@ -62,7 +62,7 @@ tip
                 
 tip - pokud chci zkopírovat ten samý řádek pod či nad sebe tak použiju ALT + SHIFT + sipka nahoru/dolu
 
-**<a> - hypertextové odkazy**
+**<a> (anchor tag) - hypertextové odkazy**
 
     - vždy musí obsahovat "destinaci" <- pro toto použijeme atributy(= další specifikace pro komponenty, co píšeme do "otevírací" části tagu)
             - použijeme atribut href="DESTINACE"

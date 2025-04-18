@@ -1,0 +1,173 @@
+<!--Takto začíná KAŽDÝ web - udává že chceme použít nejnovější verzi HTML-->
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Neco o Slepicich</title>
+  </head>
+  <body>
+    <main>
+      <!--Toto je hlavní část stránky, kde se nachází veškerý "hlavní" obsah-->
+
+      <nav>
+        <!--Toto je navigační menu-->
+        <li><a href="home">IDK</a></li>
+        <li><a href=".../vygenerovani_skeletonu">stranka #2</a></li>
+        <li><a href=""></a>contact</li>
+      </nav>
+
+      <!--Hlavní nadpis (obvykle použijeme pro název stránky)-->
+      <h1>Chicken</h1>
+
+      <!--Pro rozdělení textů do skupin použijeme paragrafy <p> -->
+      <p>
+        The <b>chicken</b> (Gallus gallus domesticus) is a large and round
+        short-winged bird, domesticated from the red junglefowl of Southeast
+        Asia around 8,000 years ago. Most chickens are raised for food,
+        providing meat and
+        <a href="https://en.wikipedia.org/wiki/Eggs_as_food">Eggs</a>; others
+        are kept as pets[1] or for cockfighting.
+      </p>
+      <!--Odkaz uvnitř textu podobně jako na wikipedii-->
+
+      <p>
+        Chickens are common and widespread domestic animals, with a total
+        population of 26.5 billion as of 2023, and an annual <sup>[2]</sup>
+        <!--horní index-->
+        production of more than 50 billion birds. A hen bred for laying can
+        produce over 300 eggs per year. There are numerous cultural references
+        to chickens in folklore, religion, and literature.
+      </p>
+      <!--nadpis nižší úrovně než h1-->
+      <h2>Description</h2>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea
+        distinctio ab non reprehenderit nobis. Facilis blanditiis molestiae nam
+        voluptatum, officiis culpa amet nobis voluptates quidem iste odit vero
+        provident?
+      </p>
+
+      <h2>Reproduction and life-cycle</h2>
+      <h3>Phylogeny</h3>
+      <h4>Domestication</h4>
+      <h5>Ja jsem h5</h5>
+      <h6>Ja jsem h6</h6>
+
+      <section>
+        <h2>Sekce</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+          laudantium optio alias provident modi odit ut id et aliquid at
+          suscipit laborum, delectus repudiandae tempora. Expedita corrupti ex
+          cum sint! Necessitatibus officiis suscipit dolores, obcaecati libero
+          debitis ullam corrupti tempora quasi laboriosam amet? Aliquid eos
+          excepturi, non laborum, consequuntur, quaerat culpa perferendis modi
+          mollitia ratione nam eaque quibusdam nesciunt quidem? Corporis
+          assumenda beatae officiis magnam! Impedit perferendis, numquam officia
+          quasi enim cupiditate suscipit nam ipsa temporibus expedita
+          exercitationem reiciendis inventore iure veniam voluptatibus itaque.
+          Praesentium tempore ea iste eligendi delectus.
+        </p>
+      </section>
+      <h2>Basnicka</h2>
+      <!--příklad line break-->
+      <p>
+        Lorem ipsum dolor sit amet consectetur, a <br />
+        dipisicing elit. Recusandae, eos explicabo. <br />
+        Distinctio dicta vel, <br />
+        quaerat doloremque quas temporibus perferendis. <br />
+        Nemo.
+      </p>
+
+      <h2>Breeds of chickens</h2>
+
+      <ul>
+        <li>Silkie</li>
+        <li>Polist</li>
+        <li>Easter Egger</li>
+        <li>Rhode Island Red</li>
+      </ul>
+
+      <ol>
+        <li>Silkie</li>
+        <li>Polist</li>
+        <li>Easter Egger</li>
+        <li>Rhode Island Red</li>
+      </ol>
+
+      <hr />
+      <!--Toto je horizontální čára, která dělí texty-->
+      <!--Složený list-->
+
+      <ol>
+        <li>
+          Bantam
+          <ul>
+            <li>Silkie</li>
+            <li>Polish</li>
+          </ul>
+        </li>
+        <li>
+          Standard
+          <ul>
+            <li>Easter Egger</li>
+            <li>Rhode Island Red</li>
+          </ul>
+        </li>
+      </ol>
+
+      <div>
+        <a href="https://www.google.com" style="display: block"
+          >Já jsem odkaz na GUGUL!!!</a
+        >
+        <!--Toto je odkaz co mě přesměruje na GUGUL-->
+        <span
+          ><a href="vygenerovani_skeletonu.html"
+            >Odkaz na moji 2. stranku :D</a
+          ></span
+        >
+        <!--Toto je odkaz na jiny .html soubor-->
+      </div>
+
+      <img src="images/egg.jpg" alt="Fried edd YUMMY" ! />
+      <!--Vložení obrázku uloženého lokálně-->
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Hen_Comb_%28cropped%29.jpg"
+        width="200px"
+      />
+      <!--Obrázek není uložen lokálně, odkazuji se někam na internet-->
+      <!--width upravuje velikost šířkově, bude později v css-->
+      <hr />
+
+      <h2>Chemicke vzorce</h2>
+      <p>H<sub>2</sub>SO<sub>4</sub></p>
+      <!--sub je pro dolní index, např. chemické vzorce-->
+      <p>H<sub>2</sub>O</p>
+      <p><sup>1</sup>/<sub>2</sub></p>
+
+      <hr />
+
+      <h2>HTML Entity</h2>
+
+      <p>1 < 6</p>
+      <!--Toto je špatně, protože HTML to bere jako tag-->
+      <p>1 &lt; 6</p>
+      <!--Toto je správně, protože HTML bere &lt; jako znak pro menší-->
+
+      <p>1 > 6</p>
+      <!--NN!!!!!!-->
+      <p>1 &gt; 6</p>
+      <!--Toto je správně, protože HTML bere &gt; jako znak pro větší-->
+      <p style="font-size: 100px; margin: 0px">&hearts;</p>
+
+      <footer>
+        <p>TOTO JE MOJE STRANKA</p>
+
+        <a href="autor">Autoři</a>
+
+        <time datetime="2025-04-18">APR 18</time>
+      </footer>
+    </main>
+  </body>
+</html>
