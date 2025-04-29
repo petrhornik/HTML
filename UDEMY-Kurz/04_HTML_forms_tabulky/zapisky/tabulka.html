@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabulka</title>
+  </head>
+  <body>
+    <h1>Nejtěžší ptáci</h1>
+
+    <table>
+      <!-- Tabulka s daty -->
+      <thead>
+        <tr>
+          <!-- řádek pro nadmisy sloupců-->
+          <th>Zvíře</th>
+          <!-- nadpis pro 1. sloupec... -->
+          <th>Obvyklá váha [Kg (lb)]</th>
+          <th>Max. váha [Kg (lb)]</th>
+          <th>Létavé</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Ostrich</td>
+          <td>104(230)</td>
+          <td>156.8 (346)</td>
+          <td>NO</td>
+        </tr>
+        <tr>
+          <!-- Elementy uzavřené v <tr> jsou všechny na 1 stejném řádku -->
+          <td>Somali Ostritch</td>
+          <td>90(200)</td>
+          <td>130 (346)</td>
+          <td>NO</td>
+        </tr>
+        <tr>
+          <td>Wild Turkey</td>
+          <td>13.5 (29.8)</td>
+          <td>39 (86)</td>
+          <td>Yes</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <th>Celkem ptáků: </th>
+        <td>3</td>
+      </tfoot>
+    </table>
+
+    <h2>Ver2</h2> <!-- 2. verze tabulky využívajíci colspan a rowspan-->
+
+    <table>
+        <thead>
+          <tr>
+            <th rowspan="2">Zvíře</th>
+            <th colspan="2">Obvyklá váha</th>
+            <th rowspan="2">Létavé</th>
+          </tr>
+          <tr>
+            <th>KG</th>
+            <th>LB</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ostrich</td>
+            <td>104</td> <!-- váha v Kg a lb je samostatně-->
+            <td>230</td>
+            <td>NO</td>
+          </tr>
+          <tr>
+            <td>Somali Ostritch</td>
+            <td>90</td>
+            <td>200</td>
+            <td>NO</td>
+          </tr>
+          <tr>
+            <td>Wild Turkey</td>
+            <td>13.5</td>
+            <td>29.8</td>
+            <td>Yes</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <th>Celkem ptáků: </th>
+          <td>3</td>
+        </tfoot>
+      </table>
+  </body>
+</html>
