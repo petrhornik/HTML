@@ -46,10 +46,45 @@
     
     - <form> reprezentuje dokument ve kterém jsou obsaženy zadané informace 
     
-    - action = atribut pro <form> specifikuje KAM jsou informace obsažené v onom <form> odesílány (např.: nějaké url)
+    - action="" = atribut pro <form> specifikuje KAM jsou informace obsažené v onom <form> odesílány (např.: nějaké url)
 
     - tip: Emmet automaticky action doplňuje
 
     - po potvrzení odeslání formuláře (kliknutí na tlačítko, Enter, ...) se vyšle HTTP požadavek je odeslán společně s daty obsaženými v onom <form> a pomocí action určíme kam požadavek půjde
 
-    - method = atribut pro <form>, určuje jaká HTTP metoda by měla být použita TBC...
+    - method="" = atribut pro <form>, určuje jaká HTTP metoda by měla být použita TBC...
+
+**Formulářové elementy**
+
+    1) <input> = pro vytvoření nějakého vstupu pro data
+                - obsahuje až 20 různých typů zadávání věcí do formuláře
+                - nemá uzavírací tag
+                - atributy
+                    a) type="" - určuje typ/druh inputu (mění vše od chování po vzhled)
+                                - druhy najdu na MDN
+                    
+                    b) placeholder="" - text v prázdném zadávacím poli zobrazený dokud něco nenapíšu
+                                        - funguje jen pro textová/číslicová pole
+
+                    c) id="" - identifikace inputu pro propojení s <label>
+
+                    d) name="" - jméno odkazující na obsah onoho inputu, když jsou data odesílána na server
+                                - odesílá se název položky(např. jmeno) s nějakou hodnotou(např. Petr) - jmeno=Petr
+                                - server si bere z formuláře hodnoty dle jim přiřazených názvů (např. pokud hledám přes google tak servery googlu po odeslání formu hledají hodnotu se jménem q)
+
+    2) <label> = používá se pro popisky/názvy inputů (hlavně "zaškrtávacích")
+                - při asociaci labelu a inputu se dá "zaktivovat" input i při kliknutí na label
+                - atributy
+                    a) for="" - zadáme sem id urč. inputu pro propojení labelu s onom inputem
+
+    tip - input id by mělo být asociováno jen s jedním labelem, tím co je pro ten input určen
+
+    3) <button> = tlacitko 
+                - default pokud se nachází ve form. tak odesílá formulář na stránku z atributu action v <form> + mě tam přesmeruje, protože je v základu nastaveno na type="submit" i když type nemám definovaný
+                
+                - atributy
+                    a) type="" - určuje co za druh tlacitka to je
+                                    - např. když nastavím type="button" tak se i uvnitř form. nic dít nebude
+                    b) value="" - pokud máme <button> bez closing tagu tak tímto atributem měníme název
+
+    tip - formular lze odeslat i bez tlacitka - staci v textovém poli dat Enter
