@@ -1,0 +1,18 @@
+h2 {        /* Platí pro všechny h2 elementy */
+        color: teal;
+        background-color: papayawhip; /* definování barvy dle názvu */
+    }
+
+button{
+    color: magenta;
+    background-color: rgb(255, 234, 199); /* definování barvy pomocí RGB */
+}
+
+p{
+    color: #2fda00;
+    background: orange; /* Všeobecná vlastnost background */
+}
+
+body{
+    background-color: #000; /* zkrácený HEX zápis */
+}

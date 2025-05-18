@@ -14,7 +14,7 @@
     <hr>
 
     <form action="/tacos">    <!-- Odeslání dat na server a následné přesměrování -->
-        <button type="button">Neklikej</button> <!-- tlačítko, které neodesílá data - nestane se nic -->
+        <button type="button">Neklikej (stejně tě nikam neodkážu)</button> <!-- tlačítko, které neodesílá data - nestane se nic -->
         <!-- různé druhy inputu -->
         <p>
             <label for="jmeno">Zadej své Jméno:</label> <!-- label je asociován urč. inputu -->
@@ -31,7 +31,7 @@
         </p>
         <p>
             <label for="cislo">Vyber si cislo:</label>
-            <input id="cislo" type="number" name="cislo">
+            <input id="cislo" type="number" name="cislo" min="1" max="100" step="1" value="50"> <!-- min, max, step a value jsou atributy pro nastavení číselného inputu -->
         </p>
         <!-- existuje jich opravdu mnoho :D -->
          <button>Odeslat</button> <!-- tlačítko pro odeslání formuláře -->
@@ -55,5 +55,71 @@
         <input type="text" name="search_query"> <!-- jméno inputu musí být search_query, aby to fungovalo -->
         <button>Vyhledat na Youtube</button>
     </form>
+
+    <hr>
+
+    <h2>další vstupy</h2>
+
+    <form action="/birds">
+        <input type="checkbox" name="Souhlas_TOS" id="souhlas" checked> <!-- checkbox -->
+        <label for="souhlas">Souhlasím s podmínkami (checkbox)</label>
+
+        <h3>Velikosti triček (radio button)</h3>
+        <p>
+            <label for="xs">XS</label>
+            <input type="radio" name="size" id="xs" value="xs"> <!-- radio button -->
+            <label for="s">S</label>
+            <input type="radio" name="size" id="s" value="s"> <!-- value je potřeba aby se odesílala jiná hodnota než on (zaškrtnuto) -->
+            <label for="m">M</label>
+            <input type="radio" name="size" id="m" value="m">
+        </p>
+        
+        <p>
+            <label for="jidlo">Vyber si jídlo (select)</label>
+            <select name="jidlo" id="jidlo"> <!-- select je rozbalovací menu -->
+                <option value="fish">Ryby</option>
+                <option value="veg">Vegetarian</option>
+                <option value="steak" selected>Stejk nom nom</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="cheese">Množství sýra (range)</label>
+            <input type="range" name="cheese_level" id="cheese" min="0" max="100" step="10" value="40"> <!-- range je posuvník -->
+        </p>
+
+        <p>
+            <label for="request">Něco co chceš říci?</label>
+            <br>
+            <textarea name="" id="request" rows="10" placeholder="Napiš nějaký text!" cols="40"></textarea>
+        </p>
+
+        <button>Submit</button>
+    </form>
+    <hr>
+
+    <h2>Ukázka validace(ověření)</h2>
+
+    <form action="/dummy">
+        <label for="first">Zadej Křestní jméno: </label>
+        <input type="text" name="first" id="first" required> <!-- required znamená, že je to povinné pole a musí být vyplněno -->
+        <p>
+            <label for="username">Uživ. jméno: </label>
+            <input type="text" name="" id="username" minlength="5" maxlength="20" required> <!-- minlength a maxlength určují minimální a maximální délku textu -->
+        </p>
+
+        <p>
+            <label for="web">Zadej adr. webu</label>
+            <input type="url" name="" id="web" required>
+        </p>
+
+        <p>
+            <label for="email">Zadej E-mailovou adr.: </label>
+            <input type="email" name="" id="email" required> <!-- type="email" znamená, že to musí být platný email -->
+        </p>
+
+        <button>Submit</button>
+    </form>
+
 </body>
 </html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Race Registration</title>
+  </head>
+  <body>
+    <h1>Race Registration!</h1>
+
+    <form action="/race_reg">
+      <div class="name_input">
+        <label for="first_name">First Name: </label>
+        <input type="text" name="f_name" id="first_name" required/>
+
+        <label for="last_name">Last Name: </label>
+        <input type="text" name="l_name" id="last_name" required/>
+      </div>
+
+      <p>Select a Race:</p>
+
+      <div class="race_type_input">
+        <!-- povinnost výběru (musím povinně vybrat) - dám required všem se stejným name="" i když lze vybrat jen 1-->
+        <input type="radio" name="race_select" id="five_k" value="five_k" required />
+        <label for="five_k">Fun Run 5k</label>
+        <br>
+        <input type="radio" name="race_select" id="half" value="half" required/>
+        <label for="half">Half Marathon</label>
+        <br>
+        <input type="radio" name="race_select" id="full" value="full" required/>
+        <label for="full">Full Marathon</label>
+      </div>
+      <!-- JE TO DIVNÝ, ALE FUNGUJE TO A BUDEME TOMU VĚŘIT - P. Hrnčíř -->
+
+      <br />
+
+      <div class="other">
+        <label for="email_adr">Email: </label>
+        <input type="email" name="email" id="email_adr" required />
+        <label for="passwd">Password: </label>
+        <input type="password" name="password" id="passwd" required />
+        <br />
+        <label for="age_select">Select AGE group: </label>
+        <select name="age" id="age_select">
+          <option value="NOT_18">Under 18</option>
+          <option value="18-30">18-30</option>
+          <option value="30-50">30-50</option>
+          <option value="50_MORE">50+</option>
+        </select>
+      </div>
+
+      <button>Register</button>
+    </form>
+  </body>
+</html>

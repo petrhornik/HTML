@@ -72,6 +72,42 @@
                                 - odesílá se název položky(např. jmeno) s nějakou hodnotou(např. Petr) - jmeno=Petr
                                 - server si bere z formuláře hodnoty dle jim přiřazených názvů (např. pokud hledám přes google tak servery googlu po odeslání formu hledají hodnotu se jménem q)
 
+                    e) value="" - použijeme v případě zaškrtávacích polí - určuje co za hodnotu se odešle pokud je pole zaškrtnuto (default se odesílá "on")
+
+                    - druhy(určujeme pomocí type="")
+
+                        a) checkbox
+                                = zaškrtávací pole
+                                - atribut checked - pole už bude samo zaškrtnuté
+                                - odesílá hodnotu on (pole je zaškrtnuté)
+
+                        b) radio button
+                            = výběrové pole(výběr 1 položky z dostupných možností)
+                            - vždy jich je více než 1
+                            - asociace do skupin pomocí stejných názvů name=""
+                            - musíme nastavit atribut value="" aby se odeslala jiná hodnota než on
+                            - pro povinný výběr dám atribut required všem polím 1 skupiny (všem se stejným mame="")
+                        
+                        c) range
+                            = slider (např. hlasitost)
+                            - vrací číselnou hodnotu v danném rozsahu
+                            - atriguty
+                                min="" - nejmenší možná čiselná hodnota
+                                max="" - největší -||-
+                                step="" - o kolik hodnot se číslo zvětší při 1 posunu
+                                value="" - startovní hodnota (hodnota po načtené stránky)
+
+                        d) number
+                            = číselné pole
+                            - mužeme nastavit min a max stejně jako u range
+                        
+                        e) color
+                            = výběr barvy
+                        
+                        f) text
+                            = pole pro zadání textu
+
+
     2) <label> = používá se pro popisky/názvy inputů (hlavně "zaškrtávacích")
                 - při asociaci labelu a inputu se dá "zaktivovat" input i při kliknutí na label
                 - atributy
@@ -88,3 +124,31 @@
                     b) value="" - pokud máme <button> bez closing tagu tak tímto atributem měníme název
 
     tip - formular lze odeslat i bez tlacitka - staci v textovém poli dat Enter
+
+    4) <select> = výběrové otevírací pole (dropdown menu)
+                - <option> = položka k výběru obsažená v select (podobné jako ul li) 
+                        - atrigut selected = položka bude vabraná vždy jako default
+    
+    5) <textarea> = pole pro zadání textu na více řádků (např.: komentář na YT video či jiné socky)
+                    - má closing tag!
+                    - atrigut rows="" - nastaví počet *viditelných* řádků, poté se musí scrollovat
+                    - atribut cols="" - počet možných znaků v 1 řádku + 2 (např.: cols ="10" jsou 12 znaků na řádkek apod.)
+
+**HTML5 Form validation (ověření)**
+
+        = ověření jestli zadáná data do formuláře jsou platná (splňují předem definované podmínky - např. u mail. adres, hesel, ...)
+        - aby se předešlo odesílání neplatných dat
+        - jedná se o atributy pro input
+        
+         a) required - pole musí být vyplněno, jinak nelze form odeslat (submit)
+
+         b) minlengh="" - minimální počet znaků
+
+         c) maxlength="" - max. počet znaků 
+                         - nikdy nepude napsat více znaků než je dáno v tomto atributu
+        
+         d) min="" max="" - to samé, ale pro čísla
+
+         e) pattern="" - definujeme co všechno by měl zadaný text obsahovat
+
+         f) type="" - urč. typy inputu obsahují i prvek validace (např. email, url, ...)
