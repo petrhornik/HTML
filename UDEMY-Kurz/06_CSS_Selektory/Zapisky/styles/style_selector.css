@@ -1,0 +1,27 @@
+*{ /* universal selector */
+    background-color: #C9FBFF;
+}
+
+button{ /* element selector */
+    font-size: 30px;
+    background-color: #85BDBF;
+}
+
+h1, h2{ /* group selector */
+    color: #57737A; 
+}
+
+#signup_b{
+    background-color: #285238;
+    color: white;
+}
+
+span{
+    color: #285238;
+}
+
+.tag{
+    background-color: red;
+    color: white;
+    font-size: 20px;
+}

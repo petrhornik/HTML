@@ -62,6 +62,96 @@
             tip - VSc má integrovaný color picker
 
 tip - každá vlastnost musí mít po zápisu hodnoty VŽDY ; <- pokud ho nenapíšu tak vlastnost nebude fungovat, ale nedostanu error!!!!!!!!!!!
+    -VSC poradí :D
 
-            
+**Vlastnosti textu v CSS**
 
+    = vše pro vzhledovou customizaci jakéhokoli druhu textu (velikosti, font, ...)
+
+    1) text-align
+        = určuje zarovnání(pozicování) textu v onom elementu na který nastavujeme
+        
+        - atributy: center - doprostřed elementu
+                    left - levá strana -||- (default)
+                    right - pravá strana -||-
+
+    2) font-weight
+        = pro nastavení tloušťky textu (light/bold)
+        - hodnoty určujeme názvy či čísly(100 - 900 (po stovkách))
+
+        - atributy: normal (400) - normální tloušťka
+                    bold (700) - tlusté písmo
+                    lighter
+                    bolder
+
+        - tip - pokud číselná hodnota pro urč. font neexistuje tak se nastaví ta nejbližší existující
+    
+    3) text-decoration
+        = nastavení "dekorativních" elementů na text. poli (např. podtržení)
+
+        - atributy: 
+                pozice čáry:
+                    underline - podtržení textu
+                    overline - nadtržení textu
+                    line-trough - čára skrze text
+                barva:
+                    {nazev/kód barvy} - dekorace bude mít onu barvu
+                styl čáry:
+                    dotted - tečkovaná
+                    solid - plná
+                    dashed - čárkovaná
+                    wavy - vlnkovaná
+                tloušťka čáry:
+                    {hodnota tloušťky (např. v px)}
+        
+        - tip - pomocí tohoto lze mazat dekorace hypertext. odkazů
+                    - atribut: none
+
+    4) line-height
+        = nastavení velikosti pro každý řádek elementu (např. pro odstupy mezi řádky atd.)
+        
+        - atributy: {specifikovaná hodnota(název/číslo(+jednotky))}
+
+    5) letter-spacing
+        = pro nast. velikosti mezer mezi jednotlivými znaky v textu
+
+        - atributy: {specifikovaná hodnota(název/číslo(+jednotky))}
+    
+    6) font-size
+        = nastavení vel. text uvnitř urč. elementu
+
+        - atributy: {specifikovaná hodnota(název/číslo(+jednotky))}
+
+    7) font-family
+        = změna fontu pro text v urč. elementu
+        - nějaké fonty jsou "build-in", ale většína "populárních" se musí importovat
+
+        - atributy: {nazev fontu} např.: Georgia, sherif, ...
+
+        - fonty se většinou nastavují ve větší skupině "tzv. font stacku"
+                - důvod: další fonty slouží jako backup pokud by PC neobsahoval ten 1. definovaný font či aby se automaticky nevyužil nežádoucí font viz.: style_text.css
+
+    8) text-transform
+        = změna formátu textu v elementu
+
+        - atributy: uppercase
+                    lowercase
+                    capitalize
+                    none
+                    ...
+
+**Jednotky v CSS**
+    = jednotky pro výjádření hodnot (např. velikosti) - např. u font-size
+
+    1) absolutní hodnoty
+
+        1.1)pixely (px)
+
+            = určování hodnoty v pixelech (něco jako cm ALE pro weby)
+            - nejvíce používané
+            - 1px v css != 1px irl && 1px === small as f***
+            - nedoporučuje se pro responsive
+
+            - zápis: {číselná hodnota}px
+        
+                    

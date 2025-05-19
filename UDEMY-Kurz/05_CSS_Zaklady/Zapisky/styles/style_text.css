@@ -1,0 +1,30 @@
+h1 {
+    text-align: center; /* zarovná text na střed elementu*/
+    font-weight: 400; /* nastaví tloušťku písma na 400(normal) */
+    text-decoration: underline #7d6e2f wavy; /* podtrhne text */
+    letter-spacing: 20px;
+    font-size: 100px;
+    font-family: Verdana; /* nastaví font na Verdana */
+}
+
+p{
+    text-align: right; /* zarovná text na pravou stranu elementu*/
+}
+.bold{
+    font-weight: 700; /* nastaví tloušťku písma na 700(bold) */
+    line-height: 2; /* nastaví výšku řádku na 2 = budou větší mezery mezi řádky */
+    font-size: 20px; /* nastaví velikost písma na 20px */
+    font-family: neexistujiciFont, Segoe UI; /* nastaví font na Segoe UI, jelikož neexistující font neexistuje */  
+}
+
+a {
+    text-decoration: none; /* odstraní podtržení textu */
+}
+
+.nospace{
+    line-height: 0.5;
+}
+
+.noletterspace{
+    letter-spacing: -1px; /* zmenší mezeru mezi písmeny */
+}
