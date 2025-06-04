@@ -1,5 +1,5 @@
 *{ /* universal selector */
-    background-color: #C9FBFF;
+    color: darkslategrey;
 }
 
 button{ /* element selector */
@@ -24,4 +24,85 @@ span{
     background-color: red;
     color: white;
     font-size: 20px;
+}
+
+span a{ /* descendant selector - upraví se barvy jen u anchorů uvnitř spanů */
+    color: green;
+}
+
+.item a{ /* descedant selector - specifičtější = upraví anchor taky jen ty uvnit elementu s class="item" */ 
+    color: red;
+    font-weight: bolder;
+}
+
+footer a{ /* descendant selector - upraví anchor jen v elementu footer */
+    color: magenta;
+}
+
+h2 + button{ /* adjacent selector - upraví se buttony, které je hned za h2 na stejném levelu */
+    background-color: yellow;
+    font-size: 20px;
+}
+
+footer > a{ /* direct child selector - upraví se jen anchor, které jsou přímo v elementu footer (o 1 lvl níže) */
+    color: rgb(127, 161, 127);
+}
+
+input[type="password"]{ /* attribute selector - upraví se inputy, které mají atribut type="password" */
+    color: blueviolet;
+}
+a[href*="google"]{ /* attribute selector - upraví se anchor, které mají kdekoli v hrefu obsaženou část "google.com" */
+    color: orange;
+}
+
+button:hover{ /* pseudo-class - upraví se buttony, když na ně najedeme myší (definujeme všechny buttony, ale stylizace se uplatní jenom na tom na který jsme najeli myší) */
+    background-color: rgb(248, 78, 78);
+    color: lightyellow;
+}
+
+.item button:hover{ /* upraví se jen buttony, které jsou uvnitř elementu s class="item" <- konkrétní stylizace má vyšší prioritu než ta obecná!!! */
+    background-color: rgb(62, 117, 62);
+    color: black;
+}
+
+a:hover{
+    text-decoration: none; /* odstraní podtržení u anchorů, když na ně najedeme myší */
+    font-weight: lighter;
+}
+
+.item button:active{ /* pseudo-class - upraví se buttony, když na ně klikneme a držíme */
+    background-color: rgb(218, 196, 196);
+}
+
+.item:nth-of-type(3){ /* pseudo-class - upraví se třetí element obsahující class="item" */
+    background-color: rgb(245, 198, 198);
+} 
+
+.item:nth-of-type(2n){ /* pseudo-class - upraví se třetí element obsahující class="item" */
+    background-color: rgb(226, 128, 128);
+}
+
+h2::first-letter{ /* pseudo-element - upraví se první písmeno v h2 */
+    color: red;
+    font-size: 50px;
+}
+
+p::first-line{ /* pseudo-element - upraví se první řádek v p */
+    color: blue;
+}
+
+p::selection{ /* pseudo-element - upraví se výběr textu v p */
+    background-color: yellow;
+}
+
+h1, h2{ /* cascade - i když už mám h1 a h2 barvy definované nahoře tak se použije barva definováná zde!! */
+    color: chocolate;
+}
+
+button:hover{
+    background-color: olive;
+}
+
+button{
+    background-color: magenta /* !important */; /* !important - přepíše všechny ostatní styly, které by se na buttony uplatnily */
 }

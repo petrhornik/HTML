@@ -6,30 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Selektory</title>
     <link rel="stylesheet" href="styles/style_selector.css ">
+    <link rel="stylesheet" href="styles/moreCSS.css"> <!-- pokud zde budu stylizovat něco co už je stylizováno v předchozím CSS, tak i přes to se použijí ty styly definované zde protoře cascade :D -->
 </head>
 
 <body>
     <nav>
         <label for="search">HLEDAT: </label>
         <input type="text" placeholder="search" id="search">
+        <input type="password" placeholder="password" id="password">
         <button>Log In</button>
-        <button id="signup_b">Sign Up</button>
+        <button id="signup_b" style="color: lightskyblue;">Sign Up</button>
     </nav>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores placeat dolore inventore facilis tempore omnis vel possimus deserunt quisquam voluptate, nulla ea, eaque enim, exercitationem recusandae nihil blanditiis temporibus ipsa!
+    Dolorem esse atque perferendis placeat. Recusandae, consectetur labore. Fugit debitis quam quod maxime corrupti quaerat quia facilis. Perferendis eum quo error, porro ut, assumenda quibusdam quas reprehenderit repellendus laudantium atque?
+    Ab, id! Qui velit adipisci eaque. Veniam assumenda reiciendis velit rerum maiores? Accusantium quidem libero, eaque unde neque, error dignissimos veritatis magnam corrupti alias officia repellat minus, voluptatibus quos eius?
+    Voluptate excepturi sit iusto fugit possimus illum recusandae minima aliquid perferendis consectetur rerum nihil mollitia accusamus perspiciatis earum deserunt ullam dolor asperiores, rem pariatur dolorem repellendus dolore. Deserunt, excepturi ea!
+    Blanditiis architecto error hic culpa aut voluptate et! A neque quia ea nihil incidunt id earum commodi repudiandae architecto recusandae ducimus deserunt explicabo, quis, tempora vel eveniet aliquam dolorem ab!
+    Eos possimus eveniet error accusamus, officiis ducimus. Sed architecto esse dolorum neque exercitationem aspernatur. Deserunt fugit voluptatem cumque totam dignissimos pariatur quae exercitationem obcaecati qui? Modi deserunt molestias veniam repudiandae!
+    Odit, aspernatur! Voluptate alias qui modi odit? Rem alias sed nostrum minus eum inventore autem quasi ea quas, voluptates sapiente cupiditate doloribus aut quae, quisquam molestias itaque nulla? Ex, reprehenderit.
+    Maiores quidem assumenda, minus quis impedit minima voluptatum commodi fuga necessitatibus placeat, odit, excepturi blanditiis harum quam vel omnis reiciendis voluptatem veniam! Ipsa totam dicta doloremque velit reprehenderit placeat iste?
+    Animi ratione eligendi omnis beatae aspernatur adipisci eius numquam corrupti, commodi quis voluptas! Odio beatae minima repellat voluptas ipsa, accusamus, atque fugiat cum maiores quos deleniti. Blanditiis suscipit ad debitis.
+    Repellendus labore qui harum ut, impedit nihil dolorum odit. Nemo praesentium natus aspernatur assumenda temporibus vero deserunt veritatis, laudantium esse soluta in aliquid incidunt dicta odio dolor, modi qui officia?</p>
+
     <main>
         <h1>Popular Posts</h1>
-        <section>
+        <section class="item">
             <span>Posted by <a href="#213adas">/u/not_funny</a></span>
             <h2>Lol look at this hilarious meme <span class="tag">funny</span></h2>
             <button>+Vote</button>
             <hr>
         </section>
-        <section>
+        <section class="item">
             <span>Posted by <a href="#345adas">/u/gooner4lyfe</a></span>
             <h2>Happy birthday to the strongest defender/bodyguard in the Prem! <span class="tag">gunners</span></h2>
             <button>+Vote</button>
             <hr>
         </section>
-        <section>
+        <section class="item">
+            <span>Posted by <a href="#981adas">/u/dogfan</a></span>
+            <h2>This Corgi got some good stuff from the vet. <span class="tag">dogs</span></h2>
+            <button>+Vote</button>
+            <hr>
+        </section>
+        <section class="item">
+            <span>Posted by <a href="#213adas">/u/not_funny</a></span>
+            <h2>Lol look at this hilarious meme <span class="tag">funny</span></h2>
+            <button>+Vote</button>
+            <hr>
+        </section>
+        <section class="item">
+            <span>Posted by <a href="#345adas">/u/gooner4lyfe</a></span>
+            <h2>Happy birthday to the strongest defender/bodyguard in the Prem! <span class="tag">gunners</span></h2>
+            <button>+Vote</button>
+            <hr>
+        </section>
+        <section class="item">
+            <span>Posted by <a href="#981adas">/u/dogfan</a></span>
+            <h2>This Corgi got some good stuff from the vet. <span class="tag">dogs</span></h2>
+            <button>+Vote</button>
+            <hr>
+        </section>
+        <section class="item">
+            <span>Posted by <a href="#213adas">/u/not_funny</a></span>
+            <h2>Lol look at this hilarious meme <span class="tag">funny</span></h2>
+            <button>+Vote</button>
+            <hr>
+        </section>
+        <section class="item">
+            <span>Posted by <a href="#345adas">/u/gooner4lyfe</a></span>
+            <h2>Happy birthday to the strongest defender/bodyguard in the Prem! <span class="tag">gunners</span></h2>
+            <button>+Vote</button>
+            <hr>
+        </section>
+        <section class="item">
             <span>Posted by <a href="#981adas">/u/dogfan</a></span>
             <h2>This Corgi got some good stuff from the vet. <span class="tag">dogs</span></h2>
             <button>+Vote</button>
@@ -37,6 +87,7 @@
         </section>
     </main>
     <footer>
+        <a href="#license">Content is available under these licenses.</a>
         <nav>
             <ul>
                 <li>
@@ -49,7 +100,7 @@
                     <a href="#contact">Contact</a>
                 </li>
                 <li>
-                    <a href="#puppies">Puppies</a>
+                    <a href="www.google.com">GOOGLE</a>
                 </li>
             </ul>
         </nav>
