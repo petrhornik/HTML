@@ -1,0 +1,15 @@
+body{
+    color: pink; /* pokouzije se na body + všechny elementy uvnitř, které nemají specificky definovaný color */
+}
+
+section{
+    color: green; /* pokouzije se na všechny section + elementy, které nemají specificky definovaný color */
+}
+
+form{
+    color: blue; /* tlacitka a inputy formu defaultně nedědí vlast. CSS */
+}
+
+button, input{
+    color: inherit; /* barva se dědí z rodiče/nadřaz. elementu */
+}

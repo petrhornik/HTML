@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+}
+
+div{
+    width: 200px; /* boxy všech divů mají fixovanou šířku */
+    height: 200px; /* boxy všech divů mají fixovanou výšku */
+    background-color: #283618; 
+}
+
+h1{
+    background-color: pink; 
+    width: 200px;
+    padding-left: 100px;
+    padding-top: 50px;
+    margin: 0;
+}
+
+span{
+    margin-left: 30px;
+}
+
+#prvni{
+    background-color: #dda15e;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid; /* border je nastavený na 5px, černou barvu a plnou čáru */
+    box-sizing: border-box; /* box-sizing je nastavený na border-box, border je zahrnut do width a height */
+    margin-left: 50px;
+    margin-bottom: 100px;
+}
+
+#druhy{
+    background-color: #bc6c25;
+    border-color: #ccd5ae;
+    border-width: 3px;
+    border-style: dashed;
+    border-left-width: 8px;
+    padding-right: 30px;
+    margin: 200px;
+}
+
+#treti{
+    background-color: #fefae0;
+    border: 4px solid black;
+    border-left-style: dotted; 
+    border-radius: 50%;
+}
+
+button{
+    padding: 10px 20px 30px 40px;
+}
+
+footer{
+    background-color: red;  /* barva pozadí bude dlouhá přes celou stránku, jelikož default box má width 100% */
+}

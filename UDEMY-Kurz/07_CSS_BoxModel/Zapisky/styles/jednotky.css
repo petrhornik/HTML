@@ -1,0 +1,72 @@
+html{ /* Definice vlast. html root elementu */
+    font-size: 30px;
+}
+
+section{
+    background-color: #8ecae6;
+    width: 800px;
+    height: 800px;
+}
+
+div{
+    background-color: #fb8500;
+    width: 50%; /* šířka bude 50 % celkové šířky rodiče elementu v tomto případě section (to samé platí pro height) */
+    height: 50%;
+}
+
+
+/* ----Použití jednotek em---- */
+
+#ems h1{
+    font-size: 40px;
+    border: 1px solid black;
+    line-height: 200%;
+}
+
+#ems h2{
+    font-size: 2em; /* font-size bude 40px jelikož 2em = 2* font-size rodiče v tomto případě article */
+    margin-left: 1em; /* odkazuje se na font-size tohoto elementu */
+}
+
+#ems h3{
+    font-size: 1.5em;
+}
+
+#ems p{
+    font-size: 1em;
+}
+
+#ems{
+    font-size: 20px;
+}
+
+button{
+    font-size: 1em;
+    padding: 0 1em;
+    border-radius: 0.5em; /* relativní nastavení b-r */
+    background-color: #023047;
+    color: white;
+}
+
+#ems ul{ /* zde nelze použít em, důvod nestované komponenty se opakovaně zmenšují/zvětšují */
+    font-size: 0.7em;
+
+}
+
+/* ----Použití jednotek rem---- */
+
+#rems h2{
+    font-size: 3rem;
+}
+
+#rems h3{
+    font-size: 2rem;
+}
+
+#rems ul{
+    font-size: 1.5rem;
+}
+
+#rems button{
+    font-size: 1.5rem;
+}

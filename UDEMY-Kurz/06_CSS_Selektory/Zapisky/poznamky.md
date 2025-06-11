@@ -160,3 +160,8 @@
 **CSS dědičnost (inheritance)**
 
     = některé CSS prostředky budou "zděděny" child (vnořenými) elementy onoho hl. elementu, pokud nejsou specificky nastaveny
+    - pokud definujeme nějakou celou skupinu elementů(např. color v body), tak všechny elementy převezmou tuto css upravu pokud nejsou definovány specificky (viz. specificity)
+    - prvky CSS ement dědí vždy z nejbližšího svého rodiče, který je má definované (může být i rodič rodiče rodiče elementu :D)
+    - některé elementy defaultně vlastnosti nedědí (např. tlačítka, inputy, ...)!!!
+        - lze zde použít hodnota inherit (např.: color: inherit;) <- bude se vlast. dědit z rodiče VŽDY
+    -tip - ne všechny vlast. se dají dědit (např.: border)!!!

@@ -1,0 +1,28 @@
+span{ /* defaultně typu inline */
+    background-color: palevioletred;
+    border: 1px solid black;
+    width: 500px;
+    padding: 50px; /* upravuje se pouze horizontálné, vertikálně nemá na text vliv */
+    margin: 50px;
+}
+
+h1{ /* defaultně typu block */
+    background-color: paleturquoise;
+    border: 1px solid black;
+    width: 300px;
+    padding: 50px; /* funguje tak jak má */
+    margin: 100px;
+}
+
+div{
+    height: 200px;
+    width: 200px;
+    background-color: olivedrab;
+    border: 3px solid black;
+    display: inline-block;
+    margin: 20px;
+}
+
+.otravny{
+    display: none; /* element nebude zobrazen */
+}
