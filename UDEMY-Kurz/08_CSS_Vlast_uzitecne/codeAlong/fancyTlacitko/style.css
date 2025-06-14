@@ -1,0 +1,25 @@
+body{
+    background-color: #151b29;
+    font-family: Roboto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+button{
+    color: #ffa260;
+    font-size: 1em;
+    background: none; /* Odstraní kompletně pozadí */
+    padding: 1em 1.5em;
+    border: 3px solid #ffa260;
+    transition: 0.2s;
+}
+
+button:hover{
+    color: white;
+    border-color: #f1ff5c;
+    transform: translateY(-0.25em);
+    box-shadow: 0 0.5em 0.5em -0.4em #c77e4a;
+    cursor: pointer; /* změna kurzoru pro víc convinience */
+}

@@ -1,0 +1,47 @@
+div{
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+    border: 2px solid black;
+    margin: 10px;
+    display: inline-block;
+}
+
+#middle{
+    background-color: antiquewhite;
+}
+
+/* ----STATIC---- */
+
+#static #middle{ /* odkaz na prostřední div */
+    position: static;
+    top: 20px; /* vlastnost je ignorována */
+}
+
+/* ----RELATIVE---- */
+
+#relative #middle{ 
+    position: relative;
+    top: 50px; /* posun z původní pozice (vytvoří se "mezera" z vrchu) */
+    left: 50px;
+}
+
+/* ----ABSOLUTE---- */
+
+#absolute #middle{ /* child element´se bude pozicovat jen v rámci rodiče (#absolute) */
+    position: absolute;
+    top: 10px;
+    left: 45px;
+}
+
+#absolute{
+    position: relative; /* nastavení pozicovaného rodiče */
+}
+
+/* ----FIXED---- */
+
+#fixed #middle{ 
+    position: fixed; /* element bude vždy vidět v rámci viewportu */
+    bottom: 70px;
+    left: 400px;
+}
