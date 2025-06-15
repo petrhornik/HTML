@@ -1,0 +1,76 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+
+/* ----FLEXBOX TUTORIAL---- */
+
+#container{
+    background-color: #003049;
+    width: 90%;
+    /* height: 500px; */
+    margin: 0 auto;
+    border: 5px solid #003049;
+    display: flex; /* pozicování typu flex se uplatní na všechny elementy uvnitř container */
+    flex-direction: row; /* určení směru hl. osy */
+    justify-content: center; /* určení rozložení elementů na hl. ose */
+    /* flex-wrap: wrap; */ /* povolení/zakázání wrapu */
+    align-items: ; /* určení rozložení elementů na přechod. ose */
+    align-content: ; /* určení rozložení celých sloupců/řádku na přechod. ose */
+}
+
+#container div{
+    width: 200px;
+    height: 200px;
+    /* flex-basis: 400px; */ /* urč. počáteční vel. elementu než je dosazen do flexboxu */
+}
+
+/* div:nth-of-type(2){
+    align-self: center;
+}
+
+div:nth-of-type(3){
+    align-self: flex-end;
+} */
+
+/* div:nth-of-type(5){
+    align-self: flex-start;
+} */
+
+div:nth-of-type(1){
+    flex-grow: 1; /* zabere 100% volného místa (zabere o 1/2 méně než n-o-t(5) */
+    flex-shrink: 2; /* bude se zmenšovat 2x rychleji než ostatní */
+}
+
+div:nth-of-type(5){
+    flex-grow: 2; /* zabere 2x více místa než n-o-t(1) */
+    flex-shrink: 0; /* element se zmenší max. na původní vel. 200px ale víc už ne! */
+}  
+
+/* ----OB. VLASTNOST FLEX--- */
+
+main{
+    width: 80%;
+    margin: 0 auto;
+    border: 5px solid black;
+    height: 500px;
+    display: flex;
+}
+
+h2{
+    text-align: center;
+}
+
+main .sidebar{
+    background-color: blue;
+    flex: 1 2 300px;
+    border: 5px solid red;
+}
+
+main .maincontent{
+    background-color: beige;
+    flex: 2 800px;
+}
