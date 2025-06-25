@@ -7,12 +7,17 @@ import Greeter from './Greeter';
 import Die from './Die';
 import ListPicker from './ListPicker';
 import DoubleDice from './DoubleDice';
+import Heading from './Heading';
+import ColorList from './ColorList';
 
 function App() {
   const [count, setCount] = useState(0)
 
-  return (
+  return (  /* Heading -> test dynamické stylizace  */
     <div>
+      <Heading barva="magenta" text="Vítejte!" fontSize="20px"/>
+      <Heading barva="teal" text="Heading #2 s jinnou color prop!" fontSize="50px"/> 
+      
       <h3>test props</h3>
       <hr />
       <Greeter name="Petr" from="Petr" />
@@ -43,6 +48,11 @@ function App() {
       <DoubleDice />
       <DoubleDice />
       
+      <h3>Renderování arrayů pomocí mapy</h3>
+
+      <ColorList colors={["red", "pink", "purple", "teal"]} />
+      <ColorList colors={["olive", "orangered", "slategrey", "wheat"]} />
+
     </div>
   );
 

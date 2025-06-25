@@ -67,11 +67,14 @@ export default function DoubleDice(){
 export default function DoubleDice(){
     const kostka1 = Math.floor(Math.random() * 3 + 1);
     const kostka2 = Math.floor(Math.random() * 3 + 1);
-    
+    const style = {color: kostka1 === kostka2 ? "green": "red"}; /* vytvoření dynamického stylu v rámci JS pomocí ternary op. uvnitř CSS vlastnosti */
+    const vyherce = kostka1 === kostka2;
+
+
     return( /*&& (and) - může být použito i pro podmínky -> pokud bude podmínka True tak se provede část za && */
-        <div>
-            <h2>Hod kostkami</h2>
-            {kostka1 === kostka2 && <p>Výhra</p>} 
+        <div className="double-dice" >
+            <h2 style={style}>Hod kostkami</h2>
+            {vyherce && <p>Výhra</p>} 
             <p> Hodnota 1. kostky: {kostka1}</p>
             <p> Hodnota 2. kostky: {kostka2}</p>
         </div>

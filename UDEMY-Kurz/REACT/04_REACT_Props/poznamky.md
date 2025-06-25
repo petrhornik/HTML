@@ -49,3 +49,39 @@ tip - do elementu kde voláme komponent můžeme passnou tolik prop kolik chceme
     - v reactu se primárně využívá ternary op. !!!!!!!
 
 **React developer tools extension**
+    = extention do prohjlížeče - pomucka k vývoji reactu
+    - pomůcky pro vývoj front-endu v reactu
+    - přistupujeme skrze dev tools v prohlížeči -> +
+
+    1) components = list právě vyrenderovaných komponent na stránce, kterou vidím
+    2)profiler = IDK
+
+**Dynamická stylizace komponentu**
+    = proměnný styl na bázi nějakých akcí (např. výhry/prohry u DoubleDice "hry")
+    - stylizace inline přímo u položek(elementů) v komponentu
+    
+    - syntaxe: style={color: "BARVA"}; <- nebo si vytvořím objekt a zavolám ho (každá CSS vlastnost v objektu se uplatní!!!)
+    
+    - u CSS vlastností co obsahují 2 slova oddělená - se použije cammelCasing
+        font-size:; -> fontSize: "" apod.
+    
+    - pro dynamičnost do vlastnosti přidáme ternary op. pro rozhodování -> viz.: DoubleDice.jsx
+    
+    - pouze tyto styly děláme inline jinak dávat do CSS stylesheetu
+
+    - do stylizace se dají taky passovat propy komponentu(fce.) style={{VLASTNOST: NAZEV_PROP}} 
+    - viz.: Heading.jsx
+
+**Renderování arrayů pomocí mapy**
+    = pokud dostáváme nějaký komponent jako array (list hodnot) a chceme aby se něco stalo s KAŽDOU hodnotou obsaženou v onom arrayi -> cykly
+        - pokud do komponentu importujeme array a chceme aby se s každou položkou něco stalo a nevracelo to array jako takový (array bez úpravy = BLE)
+    
+    - každou položku individuálně "namapujeme" do renderovatelného elementu
+
+tip - pokud si vytvořím array obsahující HTML elementy v komponentu a následně si ho zavolám do v ničem neuzavř. {} tak se veškeré elementy v arrayi vyrenderují
+    - viz.: ColorList.jsx
+    
+    -viz.: ColourList.jsx
+
+    - často se píše přímo inline k tomu kde chci "namapovaný" array renderovat
+    - MAPY JSOU POTŘEBA VŠUDE...
