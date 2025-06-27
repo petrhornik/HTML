@@ -12,7 +12,11 @@ function App() {
 
   return (
     <>
+      <h1>Nákupní seznam - mini projekt</h1>
+      <h2>passování hodnot, key propy, ESLint, prop-types(bonus)</h2>
+      <hr />
       <ShoppingList items={data} />
+      
       
     </>
   )
