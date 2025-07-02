@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 import './App.css'
 import PropertyList from './PropertyList.jsx'
 
@@ -12,7 +12,6 @@ const mistaPronajem = [
 ];
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>

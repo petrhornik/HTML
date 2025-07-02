@@ -55,7 +55,33 @@ tip - **React hook**
                     4) vyuvoření useState prom.
                     5) vytvoření fce + def. podmínek -> ternary op. ...again
                     6) nadef. returnu -> button s onClick={} a proměnny text
+                    7) menší CSS stylizace
     
     - viz.: Prepinac.jsx
 
 tip - v JS se pise true a false s mal. pismeny narozdil od pythonu
+
+**více state prom. v komponentu**
+    = v 1 komponentu může být více state proměnných
+    - můžeme nadefinovat více useState v rámcí komponentu(hl. fce) i vedlejších func.
+    - viz.: PocitaciPrepinac.jsx
+    
+    - do onClick={} apod. vždy lze napsat jen 1 fce. -> pokud chcí na 1 klik provést více useState tak je musím uzavřít do samopstatné fce. a tu si zavolat
+
+    - či může koexistovat více useState pro různé prvky v 1 komponentu
+
+**useState() a renderování**
+    = jak jsou komponenty renderovány a komponentový lifecycle
+    - livecycle setrvává do té doby než se React rozhodne pro znovu vyrenderování (opětovné spuštění) komponenty (např. změna v state apod.)
+
+    - komponent = funkce, která bude spouštěna Reactem
+    - veškeré komponenty a jejich obsah se po spuštění provádí od shora dolů po jednotlivých řádčích
+    - viz.: Counter2
+        - kdykoli se změní jakýkoli state (např. zavolám setCislo) react znovu vyrenderuje komponent
+  
+    - při použití useState() hodnota definovaná v závorce se přiřadí proměnné vždy jen při prvotním načtení, poté už se bude vždy dosazovat nějak upravená hodnota oné proměnné, pokud nedojde k zavření a opětovnému otevření celé stránky
+    - useState prom. nebude mít novou hodnotu dokud se komponenta nepřerenderuje!
+
+**Barevne ctverce CV**
+    = opakovací CV na tuto lekci viz.: React-BarvCtverce
+
