@@ -27,3 +27,44 @@
         - pokud se budu snažit nahradit hodnotu state stejnou hodnotuo tak re-render neproběhne!!
 
     - viz.: Counter.jsx
+
+**Práce s objekty uvnitř state**
+    = vytvoření 1 state proměnné pro více hodnot (objekt)
+    - např. 1 prom. počítadla hodnot pro více hráčů
+    - zobrazované hodnoty si voláme pomocí dotNotation jm_obj.nazev_hodnoty
+    
+    - react komponenta se nebude re-renderovat, protože react hlídá jen změny state prom. jako takové(její 'identitu' - jestli se jedná o ten samý objekt nebo byl nahrazen jinným) 
+        -> obsah paměti objektu či arraye ho nezajímá!
+
+tip - array je v paměti ukládán jako objekt
+
+    - pro re-render musíme content původního objektu/arraye v state zkopírovat a umístit do nového obj. který se do state vrátí
+      
+      - vyplatí se používat spread -> {...nazev_puvod_obj} <- v paměti se jedná o jinný obj. než ten původní, ale obsahuje ty samé hodnoty
+
+    - viz.: ScoreKeeper.jsx
+
+**Práce s array uvnitř state**
+    = vytvoření 1 state prom. pro více hodnot (array)
+    - fungure na stejném principu jako objekty v state
+    - viz.: EmojiClicker.jsx
+
+**generování ID pomocí UUID - viz.: EmojiClickerIDfunc.jsx** 
+    = každá hodnota v arrayi potřebuje unikátní identifikátor, aby jsme mohli k jednotlivým hodnotám přistupovat
+        - káždá hodnota má svůj key prop.
+            -> většinou z databáze odkud array s hodnot. importujeme
+
+            -> v našem případě použijeme generátor UUID (npm package), pro vytváření ID (pro key prop) -> v našem emoji arrayi
+                -> npm install uuid
+    
+    - káždá hodnota a arr bude objekt -> 1. hodnota bude ID vybenerované UUID a druhá bude ta naše hodnota v tomto případě emoji pic.
+
+**mazání hodnot z arraye by React way - viz.: EmojiClickerIDfunc.jsx**
+    =změna state při které se smaže nějaké hodnota z arraye
+      - hodnota na kterou klikneme se bude mazat na bázi jejího ID
+
+tip - aby se nám fce. spouštěla jen při triggernutí event handeleru, ale potřebujeme do ní passnout nějaké hodnoty zvnějška, tak použijeme arrow fci.
+    -> syntax: onClick={() => nazev_fce(passovava_hodnota)}
+
+    - pro mazají hodnoty z arr použijeme .filter fci.
+        - ta se bude rovnat True pokud ID právě filtrované hodnoty není shodné s hledaným ID
