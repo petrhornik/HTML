@@ -24,6 +24,10 @@ export default function EmojiClickerIDfunc() {
 
     };
 
+// ukazka změny všech položek/hodnot v arrayi
+    const vseSrdce = () => {
+        setEmoji(predchoziEmoji => {return predchoziEmoji.map(e => {return {...e, emoji: "❤️"};})});
+    };
 
     return ( // jednotlivé položky z arraye se budou pomocí mapy vkládat do spanu
         <div>
@@ -34,6 +38,7 @@ export default function EmojiClickerIDfunc() {
             ))}
             <br />
             <button onClick={pridaniEmoji}>Klikni další emoji!</button>
+            <button onClick={vseSrdce}>Změnit vše na srdce!</button>
         </div>
     );
 };

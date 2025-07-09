@@ -68,3 +68,37 @@ tip - aby se nám fce. spouštěla jen při triggernutí event handeleru, ale po
 
     - pro mazají hodnoty z arr použijeme .filter fci.
         - ta se bude rovnat True pokud ID právě filtrované hodnoty není shodné s hledaným ID
+  
+**updatování arraye v Reactu - NEJVÍC COMMON WAYS TO DO IT**
+    = jak aktualizovat obsah arraye(s vytvořením kopie arraye a v něm aktualizovat obsah = bez "mutace" původního arraye)
+    - nedojde k úpravě původního arraye
+    - viz.: NakupKosik.js
+    
+   # 1) přidávání hodnot
+            = vytvořením nového arraye pomocí spread op. (...)
+                - vezmeme obsah původního arraye a přidáme k tomu novou položku
+   
+   # 2) mazání hodnot
+            = pomocí .filter a vyfiltrujeme pryč hodnotu s urč ID
+                - celý array projede filterem a hodnota s hledaným ID se vyfiltruje pryč
+
+   # 3) úprava všech položek v arrayi
+            = pomocí .map a následné arrow fce., která se provede pro každou hodnotu/položku
+                - .map zkopíruje veškerý obsah/položky arraye
+
+   # 4) úprava konkrétní hodnoty/položky v arrayi
+            = pomocí if, else a id oné položky, vytvoří se nový array kam se všechny položky vrátí a 1 či více def. v if se upraví dle toho co je v if nadefinováno
+                -> resp. if id -> proveď změnu, else -> vrať nezměněný
+                        <- provede se pro každou položku
+    
+   * tip - na React wiki je dostupná k tomuto tématu dokumentace
+
+   
+   # 5) třídění/řazení položek v arrayi (.sort  . reverse)
+            = před použitím musím vytvořit kopii/nový array
+                    <- nechceme aby to předělalo originál
+
+    ! NEJDŘIV VŽDY VYTVOŘIT KOPII PŮVODNÍHO ARRAYE A TU TEPRVE UPRAVOVAT
+
+**Update všech položek/hodnot v arrayi**
+    - viz.: EmojiClickerIDfunc.jsx
