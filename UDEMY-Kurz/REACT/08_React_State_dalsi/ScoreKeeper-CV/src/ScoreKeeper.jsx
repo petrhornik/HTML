@@ -7,7 +7,7 @@ export default function ScoreKeeper({target, players}){
 
     const bodPlus = (id) => {
         console.log(id);
-        setPlayer(player.map((p, idx) => {
+        setPlayer(currentPlayer => currentPlayer.map((p, idx) => {
             /*if (idx == id){
                 return p != target ? p + 1 : p;
             }else{
@@ -21,7 +21,7 @@ export default function ScoreKeeper({target, players}){
     
     const smazatVse = () => {
         //setPlayer(currentPlayer => currentPlayer.map(p => p == 0)); !!toto nastavuje boolean hodnotu a nebude fungovat!!
-        setPlayer(currentPlayer => currentPlayer.map(() => 0));
+        setPlayer(currentPlayer => {return currentPlayer.map(() => 0)});
     };    
     
 
@@ -31,7 +31,7 @@ export default function ScoreKeeper({target, players}){
                 {player.map((p, idx) => {return (
                     <li key={idx} className="polozka-full">
                         <div className="polozka">
-                            <p>player{idx} má {p} bodů</p>
+                            <p>player{idx + 1} má {p} bodů</p>
                             <button onClick={() => bodPlus(idx)}>+1</button>
                         </div>
                         {p >= target && <h2>Dosažen počet bodů</h2>}
