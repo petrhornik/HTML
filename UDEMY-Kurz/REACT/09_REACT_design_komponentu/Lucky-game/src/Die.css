@@ -1,0 +1,11 @@
+.Die{
+    border-radius: 20%;
+    color: white;
+    background-color: gray;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 50px;
+    
+}

@@ -1,0 +1,25 @@
+.Lucky7{
+    border: 2px solid black;
+    padding: 30px;
+    border-radius: 2em;
+}
+
+.Lucky7-die{
+    background-color: green;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    align-content: center;
+    color: white;
+    font-size: 50px;
+    border-radius: 20%;
+}
+
+.Lucky7-dice{
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    font-size: 50px;
+}

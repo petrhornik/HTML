@@ -1,8 +1,13 @@
+// 1 velký a NEPRAKTICKÝ komponent ve je obsaženo vše pro aplikaci
+//  -> u větších apl. náročné na údržbu
+
 import { useState } from "react";
-import { getRolls, sum } from "./utils";
+import { getRolls, sum } from "./utils.js";
+import "./LuckyGame.css"
+
 export default function Lucky7(){
-    const [dice, setDice] = useState(getRolls(2));
-    const won = sum(dice) === 7;
+    const [dice, setDice] = useState(getRolls(2)); //zde tvoříme pomocí fce z utils.js Array s hodnotami
+    const won = sum(dice) === 7; //pokud se output ze sčítací fce. = 7 tak bude boolean hodnota won TRUE
 
     function roll(){
         setDice(getRolls(2));
