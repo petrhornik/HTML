@@ -1,0 +1,14 @@
+.Button{
+    background-color: goldenrod;
+    border-radius: 20px;
+    padding: 10px 30px;
+    margin-top: 0.5em;
+    transition: 1s;
+}
+
+.Button:hover{
+    background-color: red;
+    color: white;
+    box-shadow: 4px 5px 8px gray;
+}
+

@@ -53,3 +53,22 @@
         - funkci si vytvoříme mimo exportovaný komponent a passujeme ke komponentu podřazenému
         - funkci si to propu voláme bez () !!!!
         - díky tomuto můžeme použít pro LuckyGame více logik pro výhru atd.
+        - pokud si zavolanou fci definuji např. v onClick={} <- definuji přímo sem a NEzavírám do dalších {} !!!!!!!!!!!!!
+            - viz Button.jsx
+
+   # 7) passování funkcí co updatují state prom.
+        = např. samostatný reusable komponent tlačítka
+        - komponenta se dá využít pro více funkčností/pro různé jiné komponenty
+        - komponent vždy importovat před voláním!
+        - do komponenty/fce updatující state si můžu passovat jiné prom či jiné fce.
+
+   # !!!IMPORTANT!!! - Datový tok v Reactu
+        1) parent komponenta definuje funkci
+        2) fce. je passnuta jako prop do child komponentu
+        3) child komponenta si zavolá fci z propu
+        4) parent funkce je zavolána -> obvykle se změní/vytvoří nový state
+        5) parent komponent je re-renderován společně s jeho child komponenty
+
+   # CV - procvičování passování funkcí
+        - viz.: GameBoard folder
+  
