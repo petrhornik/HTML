@@ -2,6 +2,8 @@ import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import Slider from "@mui/material/Slider";
 
+//ukázka zpracování formu pomocí MUI
+
 export default function InputElements(){
     const [text, setText] = useState("");
     const [hlasitost, setHlasitost] = useState(75);
