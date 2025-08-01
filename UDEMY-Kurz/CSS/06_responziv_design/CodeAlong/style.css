@@ -1,0 +1,159 @@
+/* reset všech defaultních stylů jakéhokoli prohlížeče */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* moje CSS */
+
+html{
+    font-family: Open Sans, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #60a9ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* nastavíme urč. výšku body aby se měl panel kam zarovnávat */
+}
+
+.panel{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
+    padding: 1.5em;
+    width: 100%;
+    max-width: 960px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.pricing-plan{
+    border-bottom: 2px solid #e1f1ff;
+}
+
+.pricing-plan:last-child{ /* tip - šlo by také :nth-child(3) */
+    border: none;
+}
+
+.pricing-img{
+    margin-bottom: 2.5em;
+    max-width: 100%;
+}
+
+.pricing-header{
+    color: #888; /* #888 === #888888*/
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.pricing-features{
+    margin: 50px 0 25px;
+    color: #016ff9;
+}
+
+.pricing-features-item{
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 0.8em;
+    line-height: 1.5;
+    padding: 0.8em 0;
+    border-top: 2px solid #e1f1ff;
+}
+
+.pricing-features-item:last-child{
+    border-bottom: 2px solid #e1f1ff;
+}
+
+.pricing-price{
+    color: #016ff9;
+    display: block;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.pricing-button{
+    border: solid 2px #9dd1ff;
+    padding: 0.7em;
+    border-radius: 0.7em;
+    text-decoration: none;
+    color: #348efe;
+    display: inline-block;
+    margin: 1em 0;
+    transition: ease-in-out 0.5s ;
+}
+
+.pricing-button:hover, .pricing-button:focus{
+    background-color: #b4c4d1;
+}
+
+.pricing-button.is-featured{
+    background-color: #afdaff;
+    transition: 0.5s ease-in-out;
+}
+
+.pricing-button.is-featured:hover, .pricing-button.is-featured:focus{
+    background-color: #2094fa;
+    color: white;
+}
+
+@media (min-width: 900px) {
+    .panel{
+        flex-direction: row;
+    }
+
+    .pricing-plan{
+        border-bottom: none;
+        border-right: 2px solid #e1f1ff;
+        padding: 1.2em 2.5em;
+    }
+
+    .pricing-plan:last-child{
+        border-right: none;
+    }
+
+    
+}
