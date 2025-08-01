@@ -14,6 +14,7 @@ export default function ToDoForm({addToDo}) {
   };
 
   const handleSubmit = (evt) => {
+        console.log(evt)
         evt.preventDefault();
         addToDo(text);
         setText("");
