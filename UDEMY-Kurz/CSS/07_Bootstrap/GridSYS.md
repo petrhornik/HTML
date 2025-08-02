@@ -34,3 +34,41 @@
 
     - tip => obrázky mají vždy obraj (pro vyrovnání mezer i gueess), tzv. gutter - dá se vypnout když do divu s class row přidám g-0
 
+
+**Grid sys. utilities**
+    = pomůcku good to know for Bootstram grid
+ 
+  1) flexbox pozicování    
+    
+    - class row nám už dá defaultně DISPLAY FLEX !!
+        => komponenty se nám řadí ve flex row by default
+    - u včech položek uvnitř row lze používat flexbox stylizaci
+    - v tomto případě hl. osa === X a vedl. osa === Y
+
+    na vedlejší ose
+
+        1) align-items-{hodnota}
+            - definujeme u row
+            - zarovnání všech položek na vedlejší ose (viz.: CSS>05)
+                hodnoty: 
+                    - start - od vrchu
+                    - end - od spodu
+                    - baseline - od vrchu bez rostažení IDK
+                    - center - středová čára
+
+        2) align-self-{hodnota}
+            - definuje se u nějakého z col
+            - to samé, ALE pro jednotlivé col
+
+    na hl. ose
+
+        1) justify-content-{hodnota}
+            - definujeme u row
+            - zarovnání všech položek na hlavní ose (viz.: CSS>05)
+            - hodnoty: stejné jako u align
+                -tip - between, around, evenly === space-between/around/evenly
+
+    tip - na align i justify se lze nastavit breakpointy pro růz. obrazovky
+            
+
+
