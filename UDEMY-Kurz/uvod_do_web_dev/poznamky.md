@@ -49,3 +49,4 @@
 **Užitečné navíc**
 
                 WIN + N -> nový textový soubor bez formátu ve VSCode
+                W
