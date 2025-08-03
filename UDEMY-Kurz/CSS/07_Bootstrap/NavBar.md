@@ -32,9 +32,10 @@
             
             - collapse -> schování contentu, zobrazení se bude triggerovat např. tlačítkem, ...
         
-        - pro zobrazení přímo v navbaru, např. na velkém displayi přidám do <nav> class navbar-expand-{VELIKOST (breakpoint)}
+        - pro zobrazení přímo v navbaru, např. na velkém displayi přidám do <nav> class navbar-expand-{VELIKOST (breakpoint)} < od jaké velikosti nahoru se má začít zobrazovat
         
         - pokud chci zobrazit collapsnuté menu, tak musím přidat např. tlačítko co bude zobrazení triggerovat
+        - tlačítko musí mít class navbar-toggler
         - tlačítko a collapse div na sebe musíme napojit
             - u divu specifikujeme id
             - u tlačítka data-bs-toggle="" <- jaký prvek chceme "přepnout"
