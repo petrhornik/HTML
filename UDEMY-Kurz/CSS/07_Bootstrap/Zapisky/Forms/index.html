@@ -1,27 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulare v Bootstrapu</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet" href="../style.css">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1 class="display-2">Formuláře v Bootstrapu</h1>
-        <form action="#nowhere">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Zadejte email!">
+      <h1 class="display-2">Formuláře v Bootstrapu</h1>
+      <h3>input/select</h3>
+      <form action="#nowhere">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Zadejte email!"
+          />
+        </div>
+        <div class="form-group">
+          <label for="pass">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="pass"
+            placeholder="Zadejte heslo!"
+          />
+        </div>
+        <div class="form-group">
+          <label for="state">Status</label>
+          <select name="state" id="state" class="form-control">
+            <option value="CZ">Česko</option>
+            <option value="SK">Slovensko</option>
+            <option value="PL">Polsko</option>
+          </select>
+        </div>
+        <h3>checkbox</h3>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="checkbox1" />
+          <label for="checkbox1" class="form-check-label"
+            >Bootstrap custom checkbox</label
+          >
+        </div>
+        <div>
+          <input type="checkbox" id="defaultCheck" />
+          <label for="defaultCheck">Základní checkbox z HTML</label>
+        </div>
+        <h3>Form layout</h3>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Zadejte email!"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="pass">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="pass"
+              placeholder="Zadejte heslo!"
+            />
+          </div>
+          <div class="row">
+            <div class="form-group col-md-7">
+              <label for="city">Město</label>
+              <input
+                type="text"
+                class="form-control"
+                id="city"
+                placeholder="Zadej město"
+              />
             </div>
-        </form>
+            <div class="form-group col-md-3 col-6">
+              <label for="state">Status</label>
+              <select name="state" id="state" class="form-control">
+                <option value="CZ">Česko</option>
+                <option value="SK">Slovensko</option>
+                <option value="PL">Polsko</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2 col-6">
+              <label for="zip">PSČ</label>
+              <input
+                type="text"
+                name="zip"
+                id="zip"
+                class="form-control"
+                placeholder="Zadejte PSČ"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-2 mt-2">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="form-check-input" id="signCheck">
+                <label for="signCheck">Zůstat přihlášen!</label>   
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-1">Registrovat</button>
+      </form>
     </div>
 
-
     <!-- Bootstrap import skriptů pro plnou funkčnost -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+      integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
