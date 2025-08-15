@@ -98,3 +98,31 @@ Uncaught TypeError: messageMEME.relpace is not a function
 undefined
 > pozdrav
 'AhojAhojAhoj'
+> let product = "Artičok";
+undefined
+> let cena = 2.99;
+undefined
+> let mnozstvi = 5;
+undefined
+> console.log(`Koupil jsi $(product) za $$(cena) v počtu $(mnozstvi)`)
+Koupil jsi $(product) za $$(cena) v počtu $(mnozstvi)
+undefined
+> console.log(`Koupil jsi $(product) za $$(cena) v počtu $(mnozstvi)`)
+Koupil jsi $(product) za $$(cena) v počtu $(mnozstvi)
+undefined
+> `Koupil jsi ${product} za $${cena} v počtu ${mnozstvi}`
+'Koupil jsi Artičok za $2.99 v počtu 5'
+> let jmn = 'Petr';
+undefined
+> console.log(`Jmenuji se ${name}`)
+Uncaught ReferenceError: name is not defined
+> console.log(`Jmenuji se ${jmn}`)
+Jmenuji se Petr
+undefined
+> null
+null
+> null
+null
+> undefined
+undefined
+>

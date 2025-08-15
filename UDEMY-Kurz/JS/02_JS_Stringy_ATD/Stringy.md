@@ -72,3 +72,9 @@ POZOR => 1 + 1 => 2, ALE "1" + 1 => "11" či "text" + "text" => "texttext" <- do
          -> opakuje string několikrát za sebou
          - např.: let pozdrav = "AHOJ".repeat(3) > "AHOJAHOJAHOJ"
          - syntax: STRING/STRING_PROM.repeact(KOLIKRÁT)
+
+   6) template literáty (backticky)
+      = pokud chci do stringu vypisovat(volat) jiné prom případně v něm spouštět JS tak string uzavřu do `` <- backticků
+         -> vznik tzv. string template -> do template se přidají zavolané hodnoty/provede se JS kód a následně je to celé vypsáno jako klas. string v ""
+      - volané proměnné či cokoli JS related pišu do ${} 
+      - např.: let name = 'Petr'; console.log(`Jmenuji se ${name}`) -> Jmenuji se Petr.
