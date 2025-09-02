@@ -15,8 +15,10 @@ while (true){
         }
         choser = prompt("Vyberte funkci...");
     }else if(choser === "delete"){
-        let remover = prompt("Zadejte položku...");
-        ToDoList.filter(!remover);
+        let remover = prompt("Zadejte pořadí položky co chcete smazat...");
+        console.log(`Byla smazána položka "${ToDoList[remover]}"`)
+        ToDoList.splice(remover, 1);
+        choser = prompt("Vyberte funkci...");
     }else if(choser === "quit" || choser === "q"){
         console.log("Nashledanou....")
         break;
