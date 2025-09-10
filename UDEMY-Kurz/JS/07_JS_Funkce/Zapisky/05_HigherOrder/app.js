@@ -6,7 +6,7 @@ let greet = function(){ //func. expression pro passování
 
 greet();
 
-function zavolejDvakrat(func){
+function zavolejDvakrat(func){ //s passovanou hodnotou func se bude v tomto případě zacházet jako s fcí
     func(); //execute jako fce.
     func();
 };
