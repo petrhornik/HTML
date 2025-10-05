@@ -1,28 +1,44 @@
-// ukázka this při použití s DOM
+// Keyboard evt. a eventy objektů
 
-const makeRandColor = () => {
-    const random = [];
-    for(let i = 0; i < 3; i++){
-        random.push(Math.floor(Math.random() * 255 + 1));
+document.querySelector("button").addEventListener("click", (evt) => {
+    console.log(evt);
+});
+
+const textInput = document.querySelector("input");
+
+textInput.addEventListener("keydown", () => {
+    console.log("Ztlačena klávesa!!!"); // vypíše se pokaždé co bude stlačena jakákoli klávesa při interakci s inputem
+});
+
+textInput.addEventListener("keyup", () => {
+    console.log("Klávesa puštěna!!!"); // vypíše se po každém puštění klávesy při interakci s inputem
+});
+
+textInput.addEventListener("keydown", (evt) => {
+    console.log(`Ztlačil jsi: ${evt.key}`);
+    console.log(`Kód klávesy je: ${evt.code}`);
+});
+
+// nasloucht stlačení kláves lze přímo přes windows obj.
+
+window.addEventListener("keydown", (evt) => {
+
+    switch (evt.code){
+        case "ArrowUp":
+            console.log("UP!!")
+            console.log(`Kód klávesy je: ${evt.code}`);
+            break;
+        case "ArrowDown":
+            console.log("DOWN!!")
+            console.log(`Kód klávesy je: ${evt.code}`);
+            break;
+        case "ArrowLeft":
+            console.log("LEFT!!")
+            console.log(`Kód klávesy je: ${evt.code}`);
+            break;
+        case "ArrowRight":
+            console.log("RIGHT!!")
+            console.log(`Kód klávesy je: ${evt.code}`);
+            break;
     }
-    return `rgb(${random[0]}, ${random[1]}, ${random[2]})`;
-}
-
-// použití this pro využití bokem definované fce. ve více eventech pro různé DOM obj.
-
-function changer(){
-    this.style.backgroundColor = makeRandColor();
-    this.style.color = makeRandColor();
-};
-
-const buttons = document.querySelectorAll("button");
-
-for (let button of buttons){
-    button.addEventListener("click", changer);
-};
-
-const h1s = document.querySelectorAll("h1");
-
-for (let h1 of h1s){
-    h1.addEventListener("click", changer)
-};
+});

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        button{
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form + JS</h1>
+    <form action="/shelter" id="shelterForm">
+        <label for="text1">Textové pole</label>
+        <input type="text" id="text1" placeholder="textové pole">
+        <button>Odeslat</button>
+    </form>
+    <h2>Dostupné kočky</h2>
+    <ul id="cats">
+
+    </ul>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
