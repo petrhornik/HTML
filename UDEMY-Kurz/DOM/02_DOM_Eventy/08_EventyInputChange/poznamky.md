@@ -1,0 +1,3 @@
+**Eventy input a change**
+    => lze použít aby se prováděly eventy při interakci s polem např. ve formu, bez potřeby submitu
+    - např. live preview psaní, ...
