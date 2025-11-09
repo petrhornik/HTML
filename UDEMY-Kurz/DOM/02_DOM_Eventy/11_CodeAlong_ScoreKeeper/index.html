@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <section class="container">
+      <div class="columns">
+        <div class="column is-half align-center is-offset-one-quarter">
+          <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">Component</p>
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+              </button>
+            </header>
+            <div class="card-content">
+                <h1 class="title">CodeAlong ScoreKeeper</h1>
+                <div class="scoreGroup">
+                    <h2 id="score2">player2: <span id="player2score">0</span></h2>
+                    <h2 id="score1">player1: <span id="player1score">0</span></h2>
+                </div>
+                <div class="inputField">
+                </div>
+                <select id="maxPoints">
+                  <option value="3">3</option>
+                  <option value="5">5</option>
+                  <option value="7">7</option>
+                  <option value="10">10</option>
+                </select>
+            </div>
+            <footer class="card-footer">
+              <a href="#" id="btn+" class="card-footer-item">Player1 +</a>
+              <a href="#" id="btn+" class="card-footer-item">Player2 +</a>
+              <a href="#" id="reset" class="card-footer-item">RESET</a>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>

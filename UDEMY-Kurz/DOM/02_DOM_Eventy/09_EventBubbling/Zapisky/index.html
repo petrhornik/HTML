@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+
+    
+</head>
+<body>
+    
+    <section onclick="alert('Kliknuto na sekci')">
+        <p onclick="alert('Kliknuto na paragraf')">
+        Toto je paragraf!
+            <button onclick="alert('Tlačítko stisknuto')">Tlačítko</button> <!--pro definici stringu v čistém JS a HTML musím použít 2 růžné uvuzovky (1 z nich označují ohraničení hodnoty propu)-->
+        </p> <!--když kliknu na tlačítko, tak se spustí i akce pro rodiče (paragraf) jelikož pokud je tlačítko vnořené tak zároveň klikám i na rodiče což je paragraf-->
+    </section> <!--Zde to funguje stejně jako u paragrafu-->
+
+    <div id="container">
+        Klikni pro shování
+        <button id="changebtn">Change color</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
