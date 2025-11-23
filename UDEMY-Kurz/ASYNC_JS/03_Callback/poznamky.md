@@ -8,3 +8,5 @@
     Callback Hell -> hromada callbacků na 1 místě (např. ve fci.) - vysoce nepřehledné a ošklivé
 
 tip => používání callbacků se NEDÁ vyhnout...
+
+    - např. pokud se nevratí data v danném časovém intervalu tak se vykoná něco v opačném případě něco jinného atd. (viz. 04_Promises/app.js)
