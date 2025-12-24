@@ -19,7 +19,7 @@ function makeColor(r,g,b){
         return(`rgb(${this.r}, ${this.g}, ${this.b})`) //odkaz na hodnoty přímo v objektu
     };
     color.hex = function(){
-        return '#' + ((1<<24) + (this.r<<16) + (this.g<<8) + b).toString(16).slice(1);
+        return '#' + ((1<<24) + (this.r<<16) + (this.g<<8) + this.b).toString(16).slice(1);
     }
     return color; //vrýcení objektu
 }

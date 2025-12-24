@@ -7,3 +7,6 @@
             -> metodu vytvořím přídáním nové hodnoty objektu co obsahuje fci
 
     -> pro manipulaci s hodnotami v objektu pomocí vlast. metod se na ně odkazuju -> this.naz_prom_v_obj
+
+
+    -> víc se používá constructor funkce
