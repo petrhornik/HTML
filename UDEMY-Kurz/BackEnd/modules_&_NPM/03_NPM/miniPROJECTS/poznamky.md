@@ -1,0 +1,1 @@
+npm install -> pokud spustím ve staženém projektu tak nainstaluje veškeré packages uvedené v package.json

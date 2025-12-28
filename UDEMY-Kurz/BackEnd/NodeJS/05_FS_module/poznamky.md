@@ -10,3 +10,5 @@
 
     mkdir -> vytvoření složky
     writeFile -> vytvoří soubor s daty v určené lokalitě
+
+    
