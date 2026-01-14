@@ -8,7 +8,7 @@ npm init -y => přeskočí veškeré otázky a ihned vygeneruje package.json
         -> const app = express();
 
     -> porty pro naslouchání nastavím pomocí app.listen(cislo_portu, callback);
-        -> už se nezastaví a bude naslouchat (URL => localhost:cislo_portu)
+        -> po spuštění se už nezastaví a bude naslouchat (URL => localhost:cislo_portu)
 
     -> app.use(callback) -> fce. v callbacku se provede při každém requestu na jakýkoli port (pokud nejsou specifikovány argumenty)
 
