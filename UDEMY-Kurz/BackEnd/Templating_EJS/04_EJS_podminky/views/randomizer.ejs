@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><%= title %></h1>
+    <h2><%= num %></h2> <!-- objekt s hodnotami se passne do templatu a zde se dosadí tam kam má -->
+    
+    <!-- if podminka v EJS -->
+    
+    <% if (num % 2 === 0) { %>       <!-- do <% %> se píše logika a nevrací to hodnotu-->
+        <h4>číslo je sudé</h4>
+    <% } else { %>                  <!-- vždy musím přidat uzavírací } !!-->
+        <h4>číslo je liché</h4>
+    <% } %>
+    
+    <p><%= comment %></p>
+
+    <!-- ternary op. is BACK -->
+     <%= num%2==0 ? "Sudé" : "Liché" %> <!-- ternary rovnou vrací hodnotu proto <%= %> -->
+
+</body>
+</html>

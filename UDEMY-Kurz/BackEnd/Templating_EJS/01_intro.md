@@ -1,7 +1,7 @@
 **Dynamic HTML with Templating**
 
-    => templating umožňuje definovat předepsaný pattern for web stránku, který můžeme dyxnamicky modifikovat
-        -> předem určen základní vzhled stránky (jen se dosazuje content)
+    => templating umožňuje definovat předepsaný pattern for web stránku, který můžeme dynamicky modifikovat
+        -> předem určen základní vzhled(layout) stránky (jen se dosazuje content)
 
     -> např. pattern jak má vypadat vyhledávací stránka (nevíme kolik výsledků bude, co budou, apod.) <- stránka se vytváří za chodu
         -> určíme: vzhled vyobrazených výsledků
