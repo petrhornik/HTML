@@ -1,0 +1,21 @@
+<%- include("partials/head") %>
+
+
+    <%- include("partials/navbar") %>
+    <section class="container">
+        <h1>Browsing The <%= name %> subreddit</h1>
+        <h2><%= description %></h2>
+        <p><%=subscribers %> Total Subscribers</p>
+        <hr>
+
+        <% for(let post of posts) { %>
+            <article class="d-flex flex-row-reverse gap-lg-4 m-lg-5 justify-content-center align-items-center shadow-sm rounded-5 bg-light">
+                <p class=""><%= post.title %> - <b><%=post.author %></b></p>
+                <% if(post.img) { %>
+                <img class="rounded-5 w-50" src="<%= post.img %>" alt="">
+                <% } %>
+            </article>
+        <% } %>
+    </section>
+
+<%- include("partials/footer") %>
