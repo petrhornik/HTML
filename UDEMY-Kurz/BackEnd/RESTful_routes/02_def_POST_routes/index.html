@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET a POST requesty</title>
+</head>
+<body>
+    <h3>GET</h3>
+    <form action="http://localhost:3000/tacos" method="get">    <!-- Při odesílání na API je potřeba uvést celé URL -->
+        <input type="text" name="item">
+        <input type="number" name="quantity">
+        <input type="date" name="delivery">
+        <button>Odeslat</button>
+    </form>
+
+    <h3>POST</h3>
+    <form action="http://localhost:3000/tacos" method="post">
+        <input type="text" name="item">
+        <input type="number" name="quantity">
+        <input type="date" name="delivery">
+        <button>Odeslat</button>
+    </form>
+
+</body>
+</html>
