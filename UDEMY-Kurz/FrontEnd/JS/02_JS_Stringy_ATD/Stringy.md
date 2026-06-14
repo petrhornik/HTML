@@ -21,7 +21,7 @@
        > připojení takové fce pomocí . se jmenuje dot notation btw. -> používá se často
     
     -  property lze navázat i za nově napsaný string
-       > např.: "ahoj".lenght -> připadně let text = "ahoj".length <- při zavolání prom. se vypíše 4 !!!
+       > např.: "ahoj".length -> připadně let text = "ahoj".length <- při zavolání prom. se vypíše 4 !!!
 
 POZOR => 1 + 1 => 2, ALE "1" + 1 => "11" či "text" + "text" => "texttext" <- dochází k provedení concat (spojení stringu/ů do jednoho!)
       -> ALEE "1" - 1 => 0 ...JS can be confusing :D (btw let's NOT use this...)

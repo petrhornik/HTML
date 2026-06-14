@@ -3,11 +3,11 @@
 
     - syntax-volání: function nazev_fce(hodnoty pro zpracování navíc);
     - syntax-definování: 
-         function nazev_fce(předděfinování promněnných užitých v kódu){kód ve fci.};
+         function nazev_fce(předdefinování promněnných užitých v kódu){kód ve fci.};
 
 **Argumenty**
     = inputy akceptované funkcí definované v ()
-    - za input se při volání dosadíme název proměnné, arraye, objektu, ...
+    - za input si při volání dosadíme název proměnné, arraye, objektu, ...
         -> odkazovaná odnota se nastaví jako hodnota inputu
         -> když při zavolání jakýkoli input zustane nevyplněn, tak automaticky undefined
 

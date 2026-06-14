@@ -1,7 +1,8 @@
 // func. expression
 
-const add = function(x, y){     //definice uvnitř prom., využití hl. s arrow func....SOON
-    return x + y;
+const add = function (x, y) {
+  //definice uvnitř prom., využití hl. s arrow func....SOON
+  return x + y;
 };
 
 //funguje jako normální funkce

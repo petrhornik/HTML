@@ -1,5 +1,5 @@
 **Destructuring**
-  = krátká a snadná symtaxe pro odčnenění jednotlivých hodnot z arrayů či properties z objektů do samostatných proměnných
+  = krátká a snadná syntaxe pro odčlenění jednotlivých hodnot z arrayů či properties z objektů do samostatných proměnných
 
   -> původní array či objekt NEMUTUJE
 
