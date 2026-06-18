@@ -18,4 +18,4 @@ tip -> v kurzu je potřeba JQuerry, ale od bootstrap 5 není potřeba :D
         
         -> toto naimportuje content a dosadí ho místo sebe
 
-    -> kromě contentu jsem jdou prát i části či neuzavřené HTML tagy (pokud se uzavírají v jinném co se naimportuje pod!!)
+    -> kromě contentu jsem jdou psát i části či neuzavřené HTML tagy (pokud se uzavírají v jinném co se naimportuje pod!!)

@@ -17,11 +17,10 @@
                 <h1>{heading}</h1>  <- za heading lze dosadit dynamický content
             </body>
 
-    -> lze kombinovat i s podmínkami a další JS symtaxí
+    -> lze kombinovat i s podmínkami a další JS syntaxí
 
 **EJS**
 
-    => embedded javascript (templating)
+    => embedded javascript (templating) -> dostupný přímo v ExressJS
 
-    -> narve JS příko do HTML tempaltů
-    
+    -> narve JS přímo do HTML templatů

@@ -1,6 +1,6 @@
 **statické sobury (static files)**
 
-    => posínání více soubrorů (obrázky, videa, scripty, ...) na staru klienta (zpracovává je web. browser)
+    => posínání více soubrorů (obrázky, videa, scripty, ...) na startu klienta (zpracovává je web. browser)
 
     -> nastavím pomocí middleware use -> app.use(express.static("public"))
         

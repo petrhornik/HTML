@@ -12,7 +12,7 @@
 
     -> pro zavolání metody do jinné metody použiju jednodušše this.naz_metody a vrátí se mi její return
 
-    -> metody zavolané do constructor() <- se provedou ihned p ozavolání class
+    -> metody zavolané do constructor() <- se provedou ihned po zavolání class
 
 
 **keywordy super a extends**
@@ -23,6 +23,6 @@
 
     extends -> použíju pokud chci do class imnportovat funkcionalitu z jinné (nadřazené)
         
-        -> pokud chci u nějaké class vlastní metodu, která funguje jinak než v nadřazením importovaném, tak si jí jednoduše o oné "subclass" vytvořím (bude mít prioritu oproti importované)
+        -> pokud chci u nějaké class vlastní metodu, která funguje jinak než v nadřazeném importovaném, tak si jí jednoduše v oné "subclass" vytvořím (bude mít prioritu oproti importované)
 
     super -> pokuch ci do vytvořeného objektu z "nadřazené class" přidat další hodnoty v "subclass", takto se odkazuju na původní (již obsažené) hodnoty

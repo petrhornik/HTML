@@ -1,7 +1,7 @@
 **addEventListener**
     = základní/univerzání metoda pro přidávání eventů
     - syntax: btn.addEventListener("click", () => {fce});
-    - potřebujeme nejdřív proměnnou odkazující na tergetovaný HTML element
+    - potřebujeme nejdřív proměnnou odkazující na targetovaný HTML element
     - na 1. místo v () specifikuju kdy se event provede
         -> existuje několik druhů eventů
     - dále specifikuju fci co se provede

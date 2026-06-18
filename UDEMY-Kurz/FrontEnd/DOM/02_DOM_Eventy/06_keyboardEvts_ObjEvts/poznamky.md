@@ -1,7 +1,7 @@
 **Eventy dle inputů z klávesnice**
     => do () u každého listeneru je automaticky vždy passován tzv. callback objekt
         -> do () vložíme jakýkoli název jako parametr pro interakci s tímto obj.
-            -> obvykle se pojmenovává např.: event nebo evt
+            -> obvykle se pojmenovává např.: event nebo evt či pouze e
             -> tip: WebStorm má preset na evt :D
         -> použítí pro interakci s inputy z klávesnice a myši
 

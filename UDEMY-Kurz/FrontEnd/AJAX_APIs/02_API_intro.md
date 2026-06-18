@@ -12,4 +12,4 @@
 
     - poskytovatelem API je třeba coinyep.com, api.binance.com (existuje tier bez apikey) <- kurz krypta
     - twilie.com -> dobré pro automatizaci
-    - tip: https://swapi.dev/ -> api poskytující info o starwars (gut API tutorial stuff)
+    - tip: https://swapi.info/ -> api poskytující info o starwars (gut API tutorial stuff)

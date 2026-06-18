@@ -11,4 +11,4 @@
 
 
 **XML**
-    => používalo se dřív pro web API, dnes zde už moc ne
+    => používalo se dřív pro web API, dnes zde už ne

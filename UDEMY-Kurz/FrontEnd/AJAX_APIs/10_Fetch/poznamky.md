@@ -1,7 +1,7 @@
 **Fetch**
 
     => náhrada za XHR, jednodušší a lepší
-    -> FETCH = API pří mo integrované v JS
+    -> FETCH = API přímo integrované v JS
     -> podporuje promises
     -> v .then u fetche nikdy nebudou vidět data
         -> promise se splní hned jak se fetchi vrátí první headery response

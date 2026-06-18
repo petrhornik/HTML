@@ -1,13 +1,13 @@
 // vytvoření nového HTML elementu pomocí DOM
 
-
 // #1 - document.createElement() a .appendChild
 
 const newIMG = document.createElement("img");
 
 console.dir(newIMG); // vypíše list vlastností urč. DOM (js) objektu
 
-newIMG.src = "https://imagedelivery.net/LBWXYQ-XnKSYxbZ-NuYGqQ/fea76bef-c115-4aeb-c5f7-b35f22d73700/avatarhd";
+newIMG.src =
+  "https://imagedelivery.net/LBWXYQ-XnKSYxbZ-NuYGqQ/fea76bef-c115-4aeb-c5f7-b35f22d73700/avatarhd";
 const addedToHTML = document.body.appendChild(newIMG); //přidá vytvořený DOM objekt do HTML k urč. elementu
 addedToHTML.classList.add("square");
 
@@ -20,11 +20,14 @@ document.body.appendChild(newH3);
 // #2 - .append
 
 const FirstParagraph = document.querySelector("p");
-    // výběr 1. paragrafu
+// výběr 1. paragrafu
 
-FirstParagraph.append("HELLO, I WAS APPENDED HERE!!!", " ", "More at once?...No problem mate!");
-    // vložení na konec
-
+FirstParagraph.append(
+  "HELLO, I WAS APPENDED HERE!!!",
+  " ",
+  "More at once?...No problem mate!",
+);
+// vložení na konec
 
 const newBold = document.createElement("b");
 newBold.innerText = "Hello how are ya? I was prepanded here!";

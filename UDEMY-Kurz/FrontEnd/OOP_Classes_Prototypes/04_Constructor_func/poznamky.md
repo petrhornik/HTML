@@ -4,9 +4,9 @@
 
     => místo vytvoření a odkazování se na objekt používám keyword this přímo ve fci. (odkazuju se přímo na funkci)
 
-    -> #tip: fce. tohoto vypu by měly mít název s Upper 1. pásmenem
+    -> #tip: fce. tohoto typu by měly mít název s Upper 1. písmenem
 
-    -> pro zprovoznění fce/objektu musím přidát před volání fce. keyword new
+    -> pro zprovoznění fce/objektu musím přidat před volání fce. keyword new
     -> keyword new == vytvoří objekt z "this" hodnot
 
     -> actually zjednodušený syntax oproti Factory func. in my opinion...

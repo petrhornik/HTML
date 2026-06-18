@@ -6,7 +6,7 @@
         pro více eventů použiju this keyword pro univerzální sperifikaci, 
         která odkazuje vždy na onen objekt do kterého je zavolána
     
-    - při používání keywordu tihs NIKDY ALE NIKDY nepoužívat arrow fce.
+    - při používání keywordu this NIKDY ALE NIKDY nepoužívat arrow fce.
 
     - za this se dosadí prom. DOM obj. do kterého je taková fce. zavolána
     

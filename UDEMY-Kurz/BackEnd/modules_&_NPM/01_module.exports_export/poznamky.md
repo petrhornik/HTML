@@ -5,7 +5,7 @@
 
     -> pro import JS z jiného lokálního souboru musím se odkázat ./cesta/naz_souboru
 
-    -> lze exportovat i něco =uplně jinného než je v souboru -> module.exports = "HELLO" (exportuje se string a nic jinného)
+    -> lze exportovat i něco uplně jinného než je v souboru -> module.exports = "HELLO" (exportuje se string a nic jinného)
         -> u export{} nelze!
 
     -> lze přiřazovat hned vše jako objekt NEBO postupně s dot notation

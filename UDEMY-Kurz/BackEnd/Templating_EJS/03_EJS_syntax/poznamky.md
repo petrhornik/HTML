@@ -2,7 +2,7 @@
 
     - tagy
         -> <%= %> vrací output z toho co je uvnitř
-                - uvnitř se dá prát classic JS
+                - uvnitř se dá psát classic JS
 
     - passování
         -> JS logiku lze praktikovat přímo uvnitř .ejs templatu

@@ -30,7 +30,7 @@ npm init -y => přeskočí veškeré otázky a ihned vygeneruje package.json
     -> response objekt na odpovědi -> vytvořen expressJS obsahuje response, při odeslání se převede na HTTP text 
         -> atribut .send na odeslání http odpovědi
         -> lze poslat => status, string, Json, HTML, Buffer, ...
-        => vytvoří objekt ze kterého uznikne http response
+        => vytvoří objekt ze kterého vznikne http response
 
 **Routung**
 
@@ -38,9 +38,9 @@ npm init -y => přeskočí veškeré otázky a ihned vygeneruje package.json
 
     -> např.: /help spustí něco a /welocme něco jinného apod.
 
-    app.get("cesta", callback) -> spustí callback jen poklud se shoduje cesta v requestu (pouze GET requesty)
+    app.get("cesta", callback) -> spustí callback jen pokud se shoduje cesta v requestu (pouze GET requesty)
 
-        ->  app.get(/dogs, () => {
+        ->  app.get("/dogs", () => {
                 ...
             })
 
@@ -60,5 +60,3 @@ npm init -y => přeskočí veškeré otázky a ihned vygeneruje package.json
             -> pokud se odkáže na více, provede se jen 1. a zytek ne
 
     app.post() => stejná syntax jako u .get -> zpracovává post requesty
-
-

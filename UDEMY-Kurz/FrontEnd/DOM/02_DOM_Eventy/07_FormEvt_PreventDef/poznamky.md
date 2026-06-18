@@ -2,7 +2,7 @@
     => lze upravit defaultní fungování formuláře
     - např.: vypnout přesměrování na jinou stránku atd.
 
-    - form by default má sperifikovanou cestu v propu action, kam se oděšlou data + tam budu přesměěrován po submitu
+    - form by default má sperifikovanou cestu v propu action, kam se odešlou data + tam budu přesměrován po submitu
     
     - použiju zde typ pro detekci: submit (odeslání formu)
     - bude se nám passovat formEvent obj.
