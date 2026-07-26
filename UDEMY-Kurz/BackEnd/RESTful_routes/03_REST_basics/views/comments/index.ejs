@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display all coments</title>
+</head>
+<body>
+    <h1>Comments</h1>
+    <ul>
+        <% for(let item of comments){ %>
+            <li><p><b><%= item.username%></b> - <%= item.comment%> - <a href="/comments/<%= item.id%>">detail</a></p></li>
+            
+        <% } %>
+    </ul>
+
+    <a href="/comments/new">Vytvořit nový komentář</a>
+</body>
+</html>
