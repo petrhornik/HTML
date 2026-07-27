@@ -50,5 +50,15 @@ tip: https://gist.github.com/ -> instantní sdílení souborů/poznámek/... -> 
 
 **Express method override**
 
-    - problem: HTML formy umí posílat jen GET a POST requesty
-    - solution: 
+    - problem: HTML formy umí posílat jen GET a POST requesty a nic víc
+    - solution: method-override middleware (standalone npm package)
+
+    => middleware co přidá funkcionalitu PUT/PATCH/DELETE tam kde není defaultně podporována
+
+    - defautně se jako selektor v query stringu označuje pro tento middleware _method
+        -> app.use(methodOverride('_method'));  viz.: https://expressjs.com/en/resources/middleware/method-override/
+
+    - co chci actually za http metodu následně definuju do query stringu za konec URL kam request posílám
+      - např. u formu -> action="/comments/nejake_id/edit?_method=PATCH"
+
+    - ///IMPORTANT\\\ -> form vždy musí mít svou metodu jako POST -> method="post"

@@ -7,9 +7,9 @@
 </head>
 <body>
 
-    <form action="" method="patch">
+    <form action="/comments/<%= comment.id%>?_method=PATCH" method="post"> <!-- i když to vizera ako post tak díky method-override middlewaru to actually bude na BE registrovano ako PATCH -->
         <label for="comment">Upravit komentář: </label>
-        <input type="text" value="<%= comment.comment%>">
+        <input type="text" value="<%= comment.comment%>" id="comment" name="comment">
         <button type="submit">Upravit</button>
     </form>
 </body>

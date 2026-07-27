@@ -13,5 +13,8 @@
 
     <a href="/comments">Zpět na index komentářů</a>
     <a href="/comments/<%= comment.id%>/edit">Editovat komentář</a>
+    <form action="/comments/<%= comment.id %>?_method=DELETE" method="post">
+        <button type="submit">Smazat komentář</button>
+    </form>
 </body>
 </html>
