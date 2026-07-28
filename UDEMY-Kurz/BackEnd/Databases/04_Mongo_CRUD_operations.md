@@ -64,10 +64,10 @@
 
     - pomocí příkazu/metody .find() si zobrazím obsah dané kolekce v DB
 
-    - db.collection.find()
+    1) db.collection.find() <- gold-standard universal
       - bez passnutých argumentů vypíše vždy všechny dokumenty obsažené v kolekci
 
-    - např.:
+       - např.:
                 animalShelter> db.dogs.find()
                 [
                   { _id: ObjectId('6a67c66ca756b7495496a0d6') },
@@ -81,7 +81,7 @@
                 ]
     - do () se dají passovat tzv. querry, které určují "nalezení" pouze specifických dokumentů (děch co splňují podmínku/y)
 
-    např.:
+      např.:
             animalShelter> db.dogs.find({breed: "Puddle"});
             [
               {
@@ -93,3 +93,14 @@
               },
               ... //vše ostatní co splňuje podmínku z querry
             ]
+    2) db.collection.findOne()
+
+      = vrátí pouze 1. položku z kolekce co splňuje podmínku/y v querry
+
+
+  - dá se říci že .find()/.findOne() manipulije s jakýmsi kurzorem oterý odkazuje na validní položky v kolekci a lze přes ně i iterovat
+    
+
+  - #tip: celé MongoDB je CaseSensitive!!!
+
+  - 
