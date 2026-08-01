@@ -55,4 +55,5 @@
                 cats
                 dogs
 
-
+        - pro smazání/wipe celé kolekce použiju db.collection.deleteMany({})
+          - po dokončení zbyte prázdná kolekce

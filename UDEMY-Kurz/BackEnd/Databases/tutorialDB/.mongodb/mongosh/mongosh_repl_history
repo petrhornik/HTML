@@ -1,3 +1,11 @@
+db.movies.find()
+show collections
+use moviesApp
+show databases
+db.movies.find()
+show collections
+use moviesApp
+show databases
 exit
 db.dogs.find({$or: [{'personality.catFriendly': true}, {age: {$lt: 5}}]})
 db.dogs.find({$or: ['personality.catFriendly': true, age: {$lt: 5}]})
