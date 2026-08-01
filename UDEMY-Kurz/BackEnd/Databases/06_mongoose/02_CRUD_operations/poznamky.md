@@ -40,4 +40,7 @@
 
         2.2) .findById()
 
-            => 
+            => lze vyhledat specifickou položku based on ID
+                -> bude se hodit např při klikání v gui a filtraci co pullnout atd.
+
+            -> např.: Movie.findById("6a6e60458a7d14dd5fe3aed7").then(data => console.log(data))
