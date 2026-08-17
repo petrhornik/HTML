@@ -48,3 +48,17 @@ function insetMultipleData() {
       console.log("Encountered an error -> ", err);
     });
 }
+
+// ukazka update fce. 
+
+function updateOnePieceOfData(){
+  Movie.updateOne({title: "Babovřesky"}, {score: 9.0});
+}
+
+updateOnePieceOfData();
+
+// ukazka fce. s hybridní CRUD opertací
+
+function findAndUpdateOnePiece(filter_qry, update_qry, options_qry){
+  Movie.findOneAndUpdate(filter_qry, update_qry, options_qry).then(res => console.log(res));
+}

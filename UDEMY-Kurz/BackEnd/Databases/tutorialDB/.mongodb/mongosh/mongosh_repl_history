@@ -1,3 +1,35 @@
+db.products.find()
+show collections
+cls
+use shopApp
+db.movies.find()
+show collections
+cls
+db.movies.find( )
+cls
+clsd
+db.movies.find( )
+cls
+db.movies.find({title: {$in: ["Babovřesky", "Inception"]}})
+db.movies.find({title: {$in: ["Babovřesky", "Alien"]}})
+db.movies.find({ title: "Babovřesky" })
+db.movies.find({title: "Babovřesky"})
+cls
+db.movies.find({title: "Babovřesky"})
+db.movies.find()
+show collections
+use moviesApp
+show databases
+db.movies.find({year: {$lt: 2010}})
+db.movies.find({year: 2010})
+db.movies.find({$lt: {year: 2010}})
+db.movies.find({$set: {year: 2010}})
+db.movies.find({$lt: {year: 2000})
+db.movies.find({year: {$lt: 2000})
+db.movies.find()
+show collections
+use moviesApp
+show dbs
 db.movies.find()
 show collections
 use moviesApp
