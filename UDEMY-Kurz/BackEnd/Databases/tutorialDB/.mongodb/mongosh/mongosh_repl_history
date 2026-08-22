@@ -1,3 +1,18 @@
+db.people.find()
+show collections
+db.people.find()
+cls
+db.products.find()
+use shopApp
+cls
+db.products.find()
+db.products.findOneAndUpdate({name: "Bike Pump"},{$set: {price: 2500}});
+db.products.findOneAndUpdate({name: "Bike Pump"},{price: 2500});
+show collections
+db.products.find()
+show collections
+use shopApp
+show dbs
 db.products.find()
 show collections
 cls

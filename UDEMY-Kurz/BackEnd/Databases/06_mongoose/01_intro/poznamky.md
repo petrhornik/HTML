@@ -26,7 +26,7 @@
    2) Mongoose model
 
         => JS třídy (classes)
-            -> konstruktor který pomocí připojené šablony je schopen manipulovat s daty v konkrétním formátu
+            -> konstruktor který pomocí připojené šablony je schopen manipulovat s daty v konkrétní kolekci v db v konkrétním formátu
             -> díky šabloně/schéma ví jak data v DB vypadají/jak je má do DB uložit
 
         - modelu musím vytvořit tzv. schéma
