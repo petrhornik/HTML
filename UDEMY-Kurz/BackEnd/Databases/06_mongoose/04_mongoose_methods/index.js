@@ -69,7 +69,7 @@ productSchema.methods.addCategory = function (newCat) {
 
 // static methods definition -> metody pro celý model
 
-productSchema.statics.fireSale = function () {      // update všech instancí/položek v modelu
+productSchema.statics.fireSale = async function () {      // update všech instancí/položek v modelu
     await this.updateMany({}, {onSale: true, price: 0});                              // this označuje celý model který schéma využívá (konkrétně všechny položky/dokumenty v kolekci se kterou je model "spojen")
 }
 

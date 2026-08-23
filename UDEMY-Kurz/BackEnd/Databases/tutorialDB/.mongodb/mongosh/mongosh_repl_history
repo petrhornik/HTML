@@ -1,3 +1,27 @@
+db.campgrounds.find()
+cls
+db.campgrounds.find()
+it
+db.campgrounds.find()
+show collections
+use YelpCamp-project
+cls
+db.products.find({ name: "Apple" } )
+db.products.find()
+cls
+cl
+db.products.deleteMany({category: {$nin: ["fruit", "vegetable","diary"]}})
+db.products.deleteMany({category: {$not: ["fruit", "vegetable","diary"]}})
+db.products.find()
+show collections
+show dbs
+db.products.find()
+db.products,fi()
+show collections
+use foodStockApp
+show databases
+cls
+use simpleFoodStockApp
 db.people.find()
 show collections
 db.people.find()
