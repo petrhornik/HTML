@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editovat camp</title>
+</head>
+<body>
+    <h1>Editovat Camp</h1>
+    <form action="/campgrounds/<%= camp._id %>?_method=PUT" method="POST">
+        <div>
+            <label for="title">Název: </label>
+            <input type="text" id="title" name="campground[title]" value="<%= camp.title %>"> <!-- v name mám tzv. grouping, nejdřív dám název skupiny a potom do [] o co se jedná, v requestu se data potom budou sdružovat po název skupiny -->
+        </div>
+        <div>
+            <label for="location">Lokalita: </label>
+            <input type="text" id="location" name="campground[location]" value="<%= camp.location %>">
+        </div>
+
+        <button type="submit">Upravit Camp</button>
+    </form>
+    <a href="/campgrounds">Zpět na index Campů</a>
+</body>
+</html>

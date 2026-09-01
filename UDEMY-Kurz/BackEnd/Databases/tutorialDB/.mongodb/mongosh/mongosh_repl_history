@@ -1,4 +1,8 @@
 db.campgrounds.find()
+show collections
+use YelpCamp-project
+show databases
+db.campgrounds.find()
 cls
 db.campgrounds.find()
 it

@@ -13,5 +13,9 @@
         <p>Lokalita: <b><%= camp.location %></b></p>
     </section>
     <a href="/campgrounds">Zpět na Index</a>
+    <a href="/campgrounds/<%= camp._id %>/edit">Upravit camp</a>
+    <form action="/campgrounds/<%= camp._id %>?_method=DELETE" method="POST">
+        <button>Smazat camp z DB</button>
+    </form>
 </body>
 </html>
