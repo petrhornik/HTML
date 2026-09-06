@@ -6,7 +6,9 @@
     
     2) spust docker run script
 
-        v CLI -> docker run -d   --name mongodb_kurz   -p 27017:27017   -v ./tutorialDB:/data/db   mongodb/mongodb-community-server:latest
+        v CLI LINUX -> docker run -d  --name mongodb_kurz   -p 27017:27017   -v ./tutorialDB:/data/db   mongodb/mongodb-community-server:latest
+
+        v CLI MACOS (tempoary fix)-> docker run -d --name mongodb_kurz -p 27017:27017 -v ./tutorialDB:/data/db -e GLIBC_TUNABLES=glibc.pthread.rseq=1 --entrypoint mongod mongodb/mongodb-community-server:latest --bind_ip_all
 
     3) nasledně až vše pojede, tak si spusť v terminalu mongosh přímo z containeru
 

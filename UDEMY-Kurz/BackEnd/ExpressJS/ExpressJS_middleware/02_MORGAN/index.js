@@ -3,8 +3,8 @@ const app = express();
 const morgan = require("morgan");
 
 
-app.use(morgan("tiny")); //morgan middleware pro loggování requestů z FE
-app.use(morgan("dev"))
+app.use(morgan("tiny")) // app.use() se provede před každým requestem na ExpressJS na jakoukoli routu 
+app.use(morgan("dev")); //morgan middleware pro loggování requestů z FE
 
 app.get("/", (req,res) => {
     res.send("Home page!");
