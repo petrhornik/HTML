@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail campu</title>
-</head>
-<body>
-    <h1>Detail</h1>
+<% layout("layouts/boilerplate") %>
+<h1>Detail</h1>
 
-    <section>
-        <h2>Název: <%= camp.title %></h2>
-        <p>Lokalita: <b><%= camp.location %></b></p>
-    </section>
-    <a href="/campgrounds">Zpět na Index</a>
-    <a href="/campgrounds/<%= camp._id %>/edit">Upravit camp</a>
-    <form action="/campgrounds/<%= camp._id %>?_method=DELETE" method="POST">
-        <button>Smazat camp z DB</button>
-    </form>
-</body>
-</html>
+<section class="d-flex border border-2 mt-4">
+  <img
+    class="img-fluid w-50"
+    src="<%= camp.image %>"
+    alt="<%= camp.description %>"
+  />
+  <div class="d-flex flex-column justify-content-between">
+    <div class="m-2">
+      <h2><%= camp.title %></h2>
+      <p>Lokalita: <b><%= camp.location %></b></p>
+      <p>Cena: <b><%= camp.price %> CZK/noc</b></p>
+      <h4>Popisek:</h4>
+      <p><%= camp.description %></p>
+    </div>
+    <div class="btn-group rounded-0">
+      <a href="/campgrounds" class="btn btn-warning">Zpět na Index</a>
+      <a href="/campgrounds/<%= camp._id %>/edit" class="btn btn-success"
+        >Upravit camp</a
+      >
+      <form action="/campgrounds/<%= camp._id %>?_method=DELETE" method="POST">
+        <button class="btn btn-danger rounded-0">Smazat camp z DB</button>
+      </form>
+    </div>
+  </div>
+</section>

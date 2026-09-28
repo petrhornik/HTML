@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Přehled Tábořišť</title>
-</head>
-<body>
-    <h1>Celkový přehled</h1>
-    <div>
-        <a href="/campgrounds/new">Vytvořit nový Camp do DB</a>
-    </div>
-    <ul>
-        <% for (let camp of campgrounds) { %>
-            <li><a href="/campgrounds/<%= camp._id %>"><%= camp.title %></a></li>
-        <% } %>
-    </ul>
-</body>
-</html>
+<% layout("layouts/boilerplate") %> <!-- specifikování konkrétního layoutu do kterého se bude content vkládat před zobrazením v browseru -->
+<h1 class="p-2">Celkový přehled</h1>
+<div>
+    <a href="/campgrounds/new">Vytvořit nový Camp do DB</a>
+</div>
+<section class="d-flex flex-wrap">
+    <% for (let camp of campgrounds) { %>
+        <div class="card w-25 m-5">
+            <img class="img-fluid" src="<%= camp.image %>" alt="<%= camp.description %>">
+            <h3><%= camp.title %></h3>
+            <p><%= camp.location %></p>
+            <a href="/campgrounds/<%= camp.id %>" class="btn btn-primary m-2 w-50 align-self-center">Zobrazit detail</a>
+        </div>
+    <% } %>
+</section>
+

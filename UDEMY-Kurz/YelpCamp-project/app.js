@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
+const ejsMate = require("ejs-mate"); // engine pro ejs, který umožňuje používat layouty
 const methodOverride = require("method-override");
 
 // import modelů
@@ -23,6 +24,7 @@ mongoose.connect("mongodb://localhost:27017/YelpCamp-project");
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+app.engine("ejs", ejsMate); // udává ře místo výchozího enginu ejs se využije na zpracování ejs-mate
 app.use(express.urlencoded({extended: true})); // bez tohoto mi express nebude parsovat HTML formy v POST requestu
 app.use(methodOverride("_method"));     // díky tomuto můžu používat i další CRUD metody mimo GET, POST
 

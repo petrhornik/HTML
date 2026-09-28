@@ -28,3 +28,32 @@
       -> app.use(express.urlencoded({extended: true}));
 
       - bez tohoto řádku se body nebude parsovat (idk why)
+
+   # EJS-mate
+
+      = zastává funkcionalitu teplatingu z eleventy v ejs
+         - lze vytvořit tzv. boilerplate co se bude wrapovat okolo contentu (nav, footer, ..)
+
+      - jedná se o basic npm package
+      - veškeré boilerplate soubory pak ukládám do složky layouts ve views¨
+
+      - <%- body %> -> referencuje obsah vkládaných stránek
+      - <% layout("layouts/naz_layoutu") %> -> v content stránkách určuje do jakého layoutu se vloží
+
+#tip - komponenty se vyplácí dávat samostatně
+   - tzv. partials -> já bych nazval spíš components (but for sake of this course...)
+
+      - partials už potom jen includuju přímo do layoutu dle názvu souboru v /partials
+        - <%- include("../parials/naz_souboru") %>
+
+   # Bootstrap implementation
+
+      = v tomto miniprojektu používám na styling bootstrap
+
+      - incuduju přes jsdelivr CDN linky
+      - potom následný styling pomocí bootstrap5 komponent :D
+
+
+   # Inserting obrázků
+
+      - zatím pouze Stringové odkazy v databázi

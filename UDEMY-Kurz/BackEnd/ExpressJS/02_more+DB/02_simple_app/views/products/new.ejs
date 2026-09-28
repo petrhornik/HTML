@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vytvořít nový produkt</title>
+</head>
+<body>
+    <h1>Vytvořit nový produkt</h1>
+
+    <form action="/products/new" method="post">
+        <div>
+            <label for="name">Název: </label>
+            <input type="text" name="name" required>
+        </div>
+        <div>
+            <label for="price">Cena: </label>
+            <input type="number" name="price" min="0" required>
+        </div>
+        <div>
+            <label for="name">Kategorie: </label>
+            <select name="category" id="category" required>
+                <% for (let item of categories) {%>
+                    <option value="<%=item%>"><%=item%></option>
+                <% } %>
+            </select>
+        </div>
+        <button>Submit</button>
+    </form>
+</body>
+<style>
+    div{
+        margin: 0.5rem;
+    }
+</style>
+</html>

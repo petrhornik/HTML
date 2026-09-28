@@ -1,3 +1,7 @@
+db.campgrounds.find()
+show collections
+use YelpCamp-project
+show databases
 cls
 db.campgrounds.find({title: "Forest Bay"})
 db.campgrounds.find()
