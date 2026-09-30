@@ -11,25 +11,22 @@ app.use((req,res,next) => {
     next();
 });
 
-app.use("/dogs", (req,res,next) => {    
-    console.log("Specifický middleware proběhl!");
-    next();
-});
-
-// autentizační middleware DEMO
-
-const verifyPasswd = (req,res,next) => {    // v tomto případě si to vytvořím jako klas. fci a budu to passovat do konkrétních route jako callback
-
+const verifyPasswd = (req,res,next) => {   
     const {passwd} = req.query;
     if(passwd === "pass123"){
         next();
     }else{
         // res.send("Přístup ZAMÍTNUT!!! Neplatné heslo.")
-        throw new Error("Je vyžadováno heslo!");    // nechám error zpracovat default handlerem
+        throw new Error("Je vyžadováno heslo!");    // při použití default error handleru se mi triggrne můj custom hanler middleware
     };
 };
 
-//
+// specifický middleware
+
+app.use("/dogs", (req,res,next) => {    
+    console.log("Specifický middleware proběhl!");
+    next();
+});
 
 app.get("/", (req,res) => {
     res.send("Home page!");
@@ -47,12 +44,22 @@ app.get("/secret", verifyPasswd,(req,res) => {  // za routu lze vsadit více fc�
 // ukázka nefunkční routy co vrací error (konkrétně zde JS syntax error)
 
 app.get("/error", (req,res) => {
-    chicken.fly();
+    chicken.fly();                  // když toto vrátí error zachytí to můj custom error handler middleware
 })
 
 app.use((req,res) => {
     res.status(404).send("Cesta pro request nenalezena!!!")
 });
+
+// ukázka vlastního globálního error handleru
+
+app.use((err,req,res,next) => {
+    console.log("******************");
+    console.log("******ERROR*******");
+    console.log("******************");
+    next(err);  // původní error z build in Express err handleru, ale opět dojde k překreslení stránky
+})
+
 
 app.listen(3000, () => {
     console.log("GUT -> jedu na portu 3000!")

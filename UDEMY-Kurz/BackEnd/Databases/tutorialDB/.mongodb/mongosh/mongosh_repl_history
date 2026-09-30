@@ -1,3 +1,7 @@
+use YelpCamp-project
+show databases
+cls
+clsa
 db.campgrounds.find()
 show collections
 use YelpCamp-project
