@@ -14,9 +14,22 @@
 
 **Vytvoření vlastní err class**
 
-    = vytvořím si vlastní třídu ve které specifikuju kdy se jaký err code bude vracet
+    = vytvořím si vlastní třídu ve které specifikuju vlastní error objekt co si můžu potom opakovaně volat
 
     - lze psát manuálně pomocí res.status, ALE to je moc práce
 
     - pro vytvoření custom třídy si ji vytvořím jako extend z už existující Error třídy
-      - 
+      - lepší praktika je to zapisovat do samostatného souboru a potom to importovat do index.js (či app.js dle preference)
+
+    - po vytvoření už jen importuju pomocí CommonJS či ES6 a používám místo Error
+
+tip - v 90% případů pracuji s errory typu 500 a 400
+tip2 - defaultní error handler detekuje i status, proto když v custom error class speicifikuju i to, tak to bude brát
+
+**Úprava error stacku**
+
+    = error v non-production prostředí vrací i tzv. error stack -> všechno co se vypisuje za error zprávou
+
+    - dá se s tím také manipulovat když si ho upravím v app.use na konci kódu (viz. index)
+
+tip3 - generic JS errory nemají status, dá se předejít nastavením tzv. defaultního statusu

@@ -1,3 +1,9 @@
+db.products.find()
+cls
+show collections
+use async_errors
+show databases
+cls
 use YelpCamp-project
 show databases
 cls

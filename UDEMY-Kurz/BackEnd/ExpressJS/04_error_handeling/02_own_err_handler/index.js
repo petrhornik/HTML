@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 
+const AppError = require("./appError.js"); // import vlastní třídy definované v jinném souboru
+
 app.use(morgan("common"));
 
 app.use((req,res,next) => {    
@@ -19,7 +21,7 @@ const verifyPasswd = (req,res,next) => {
         // res.send("Přístup ZAMÍTNUT!!! Neplatné heslo.")
         // res.status(401);  // 401 = Unauthorized - bude vracet mnou specifikovaný err code, přímá inline specifikace přímo v res.send je PAIN psát furtz dokola
         //throw new Error("Je vyžadováno heslo!");    // při použití default error handleru se mi triggrne můj custom hanler middleware
-        
+        throw new AppError("Je potřeba heslo!", 401);
     };
 };
 
@@ -29,6 +31,10 @@ app.use("/dogs", (req,res,next) => {
     console.log("Specifický middleware proběhl!");
     next();
 });
+
+app.get("/admin", (req,res) => {
+    throw new AppError("Nemáte právo na vstup!", 403);
+})
 
 app.get("/", (req,res) => {
     res.send("Home page!");
@@ -61,7 +67,12 @@ app.use((err,req,res,next) => {
     console.log("******************");
     next(err);  // původní error z build in Express err handleru, ale opět dojde k překreslení stránky
 })
+// ukázka modifikace error stacku
 
+app.use((err,req,res,next) =>{
+    const {status = 500, message = "Něco se pokazilo :("} = err;
+    res.status(status).send("Nastala chyba: " + message)
+})
 
 app.listen(3000, () => {
     console.log("GUT -> jedu na portu 3000!")
