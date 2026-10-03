@@ -6,7 +6,7 @@ const mongoose = require("mongoose"); // nic nenapojuji, toto pro tvorbu modelu 
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true,
+        required: [true, "Název produktu musí být vyplněn!!"],  // lze specifikovat custom err message, pokud se vyskytne chyba ve validaci zde
     },
     price: {
         type: Number,

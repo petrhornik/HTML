@@ -20,4 +20,20 @@ tip2 - novej EpressJS už zvládá tyto errory samostatně i guess
 
 **Funkce pro error handling async fcí**
 
-    = celou async fci wrapnu jako callback do této fce.
+    = celou async fci wrapnu do této funkce
+
+    - v handler fci. (většinou wrapAsync, catchAsync, atd.)
+      - musím vytvořit req,res,next a to passnout do te wrapnute fce.
+
+    - následně trackuju errory napříč fcí a pokud se něco vysketne tak se provede next v rámci .catch callbacku z fce.
+
+    - lze použít na kterýkoli async (či možná i klasický sync)
+
+**Handling Mongoose errorů specificky**
+
+    = mongoose má určité errory které mají svá specifikova a neuachtí je erro handling middleware
+
+    - jedná se o errory úplně jinného typu (name)
+
+    - přímo v mongoose modelu si u required můžu napsat custom err zprávu
+      - viz.: models>product.js

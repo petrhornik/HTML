@@ -47,7 +47,7 @@ app.get("/products/new", (req,res) => {
 });
 
 app.post("/products/new", async (req,res, next) => {
-    try{                        // ,ukázka hadlování erroru z mongoose (v novym expressu už handluje automaticky)
+    try{                        // ukázka handlování erroru z mongoose (v novym expressu už handluje automaticky)
         const data = req.body;
         console.log(data);
         await Product.insertOne({name: data.name, price: data.price, category: data.category}, {validate: true});  
@@ -57,19 +57,25 @@ app.post("/products/new", async (req,res, next) => {
     }
 });
 
+// ukázka použití externí wrapper fce s callbackem pro async error handling
+
+const wrapAsync = (fn) => {       // funkce pro zjednodušení zápisu error handleru v async funkcích
+    return function(req,res,next){  //musím dát znovu sem a to následně passuju do té wrapnuté
+        fn(req,res,next).catch(e => next(e))    // pokud fn vrátí error tak se rpovede .catch callback
+    }
+}
+    
 //detail produktu
-app.get("/products/:id", async (req, res, next) => {
-    try{
+app.get("/products/:id", wrapAsync(async (req, res, next) => {  // na req,res,next se dosadí to co passuju v return u wrapAsync handler fce.
         const {id} = req.params;
         const resultProduct = await Product.findById(id);
         if(!resultProduct){
             throw new AppError("Produkt nenalezen...", 404);
         };
         res.render("products/detail", {resultProduct});
-    }catch(e){
-        next(e);
-    }
-});
+    })
+);
+
 
 //edit produktu
 
@@ -92,6 +98,18 @@ app.delete("/products/:id/delete", async(req,res) => {
     const {id} = req.params;
     await Product.deleteOne({_id: id});
     res.redirect("/products")
+})
+
+// definování error handleru mongoose errory (ValidationError, atd.)
+
+const handleValidationErr = (err) => {
+    console.dir(err);
+    return new AppError("Validace selhala: " + err.message, 400);
+};
+
+app.use((err,req,res,next) => {
+    console.log(err.name);
+    err.name == "ValidationError" && (err = handleValidationErr(err));
 })
 
 // definování error handleru, triggruju pomocí Error objektu/ mého AppError objektu
