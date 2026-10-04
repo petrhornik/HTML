@@ -7,6 +7,11 @@ const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate"); // engine pro ejs, který umožňuje používat layouty
 const methodOverride = require("method-override");
 
+// import custom error class a error function wrapperu
+
+const ExpressError = require("./utils/ExpressError.js")
+const catchAsync = require("./utils/catchAsync.js")
+
 // import modelů
 const Campground = require("./models/campground");
 
@@ -45,10 +50,15 @@ app.get("/campgrounds/new", (req,res) => {
     res.render("campgrounds/new");
 });
 
-app.post("/campgrounds", async (req,res) => {
-    const newCamp = new Campground(req.body.campground); // odkazuju se na konkrétní kolekci(HTML group) z formuláře
-    await newCamp.save();
-    res.redirect(`/campgrounds/${newCamp._id}`);
+app.post("/campgrounds", async (req,res, next) => {
+    try{
+        const newCamp = new Campground(req.body.campground); // odkazuju se na konkrétní kolekci(HTML group) z formuláře
+        await newCamp.save();
+        res.redirect(`/campgrounds/${newCamp._id}`);
+    }catch(e){
+        next(e);
+    }
+
 });
 
 // detail jednoho campu
@@ -67,9 +77,13 @@ app.get("/campgrounds/:id/edit", async (req,res) => {
 });
 
 app.put("/campgrounds/:id", async (req,res) => {
-    const {id} = req.params;
-    await Campground.findOneAndUpdate({_id: id}, req.body.campground);
-    res.redirect(`/campgrounds/${id}`)
+    try{
+        const {id} = req.params;
+        await Campground.findOneAndUpdate({_id: id}, req.body.campground);
+        res.redirect(`/campgrounds/${id}`)
+    }catch(e){
+        next(e);
+    }
 })
 
 // smazání campu
@@ -78,6 +92,12 @@ app.delete("/campgrounds/:id", async (req,res) => {
     const {id} = req.params;
     await Campground.findOneAndDelete({_id: id});
     res.redirect("/campgrounds");
+})
+
+// baisc error handler
+
+app.use((err,req,res,next) => {
+    res.send("OHHH NOOOO!");
 })
 
 app.listen(3000, () => {

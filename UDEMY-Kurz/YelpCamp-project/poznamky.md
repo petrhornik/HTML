@@ -57,3 +57,26 @@
    # Inserting obrázků
 
       - zatím pouze Stringové odkazy v databázi
+
+   # Validace formulářů (komunikace s DB)
+
+      1) Clien-side validace (bootsrap)
+
+         = když používám styling/js z bootstrap5 tak už on sám obsahuje custom validaci formulářů
+
+         - viz.: https://getbootstrap.com/docs/5.3/forms/validation/
+         - určím prohlížení aby vypnul default validaci a předám jí boootstrapu
+
+         - musím využít JS pro funkci validace (stačí zkopírovat z bootsrap webu)
+
+         - pokud budu chtít zobrazit popisek u položek co podínku splňují tak uzavřu text do divu u onoho inputu a dám mu class
+           -> valid-feedback
+
+      2) Basic error handler/class
+   
+         = definoval jsem si dole v app.js základní error handler, a následně class pro snažší tvorbu costuom errorů co bude handler zobrzovat (AppError again)
+
+         - místo AppError -> zde ExpressError v /utils
+
+         - potom si vytvořím i tu .catch callback. wrapper fci :P
+           ->  

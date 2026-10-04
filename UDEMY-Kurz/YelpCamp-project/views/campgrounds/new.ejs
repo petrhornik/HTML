@@ -1,31 +1,89 @@
 <% layout("layouts/boilerplate") %>
 <h1>Vytvořit Camp</h1>
-<form action="/campgrounds" method="POST" class="border border-1 p-5 rounded-3 w-50 shadow-sm">
+<form
+  action="/campgrounds"
+  method="POST"
+  class="border border-1 p-5 rounded-3 w-50 shadow-sm validatedForm"
+  novalidate
+>
+  <!-- Formuláři vypínám defaultní browser validaci, abych mohl použít tu z bootstrapu -->
   <div class="m-2">
     <label for="title">Název: </label>
-    <input type="text" id="title" name="campground[title]" class="form-control"/>
+    <input
+      type="text"
+      id="title"
+      name="campground[title]"
+      class="form-control"
+      required
+    />
+    <div class="valid-feedback">
+        To by šlo :D
+    </div>
     <!-- v name mám tzv. grouping, nejdřív dám název skupiny a potom do [] o co se jedná, v requestu se data potom budou sdružovat po název skupiny -->
   </div>
   <div class="m-2">
-    <label for="location" class="form-label" >Lokalita: </label>
-    <input type="text" id="location" name="campground[location]" class="form-control"/>
-  </div>
-  <div class="m-2">
-    <label for="location" class="form-label" >Odkaz na obrázek: </label>
-    <input type="text" id="image" name="campground[image]" class="form-control"/>
-  </div>
-  <div class="m-2">
-    <label for="location" class="form-label" >Cena: </label>
-    <div class="input-group mb-3">
-      <span class="input-group-text" id="basic-addon1">CZK</span>
-      <input type="number" class="form-control" id="price" name="campground[price]" placeholder="0.00" aria-label="0.00" aria-describedby="basic-addon1">
+    <label for="location" class="form-label">Lokalita: </label>
+    <input
+      type="text"
+      id="location"
+      name="campground[location]"
+      class="form-control"
+      required
+    />
+    <div class="valid-feedback">
+        To by šlo :D
     </div>
   </div>
   <div class="m-2">
-    <label for="location" class="form-label" >Popis: </label>
-    <textarea type="text" id="description" name="campground[description]" class="form-control"></textarea>
+    <label for="location" class="form-label">Odkaz na obrázek: </label>
+    <input
+      type="text"
+      id="image"
+      name="campground[image]"
+      class="form-control"
+      required
+    />
+    <div class="valid-feedback">
+        To by šlo :D
+    </div>
+  </div>
+  <div class="m-2">
+    <label for="location" class="form-label">Cena: </label>
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">CZK</span>
+      <input
+        type="string"
+        class="form-control"
+        id="price"
+        name="campground[price]"
+        placeholder="0.00"
+        aria-label="0.00"
+        aria-describedby="basic-addon1"
+        required
+      />
+      <div class="valid-feedback">
+        To by šlo :D
+    </div>
+    </div>
+  </div>
+  <div class="m-2">
+    <label for="location" class="form-label">Popis: </label>
+    <textarea
+      type="text"
+      id="description"
+      name="campground[description]"
+      class="form-control"
+      required
+    ></textarea>
+    <div class="valid-feedback">
+        To by šlo :D
+    </div>
   </div>
 
   <button type="submit" class="btn btn-dark mt-2">Vytvořit Camp</button>
 </form>
-<a href="/campgrounds" class="btn btn-toolbar btn-warning mt-4">Zpět na index Campů</a>
+<a href="/campgrounds" class="btn btn-toolbar btn-warning mt-4"
+  >Zpět na index Campů</a
+>
+
+

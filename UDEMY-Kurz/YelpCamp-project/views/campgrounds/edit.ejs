@@ -1,29 +1,29 @@
 <% layout("layouts/boilerplate") %>
 <h1>Upravit Camp</h1>
-<form action="/campgrounds/<%= camp._id %>?_method=PUT" method="POST" class="border border-1 p-5 rounded-3 w-50 shadow-sm">
+<form action="/campgrounds/<%= camp._id %>?_method=PUT" method="POST" class="border border-1 p-5 rounded-3 w-50 shadow-sm validatedForm" novalidate>
   <div class="m-2">
     <label for="title">Název: </label>
-    <input type="text" id="title" name="campground[title]" class="form-control" value="<%= camp.title %>"/>
+    <input type="text" id="title" name="campground[title]" class="form-control" value="<%= camp.title %>" required/>
     <!-- v name mám tzv. grouping, nejdřív dám název skupiny a potom do [] o co se jedná, v requestu se data potom budou sdružovat po název skupiny -->
   </div>
   <div class="m-2">
     <label for="location" class="form-label" >Lokalita: </label>
-    <input type="text" id="location" name="campground[location]" class="form-control" value="<%= camp.location %>"/>
+    <input type="text" id="location" name="campground[location]" class="form-control" value="<%= camp.location %>" required/>
   </div>
   <div class="m-2">
     <label for="location" class="form-label" >Odkaz na obrázek: </label>
-    <input type="text" id="image" name="campground[image]" class="form-control" value="<%= camp.image %>"/>
+    <input type="text" id="image" name="campground[image]" class="form-control" value="<%= camp.image %>" required/>
   </div>
   <div class="m-2">
     <label for="location" class="form-label" >Cena: </label>
     <div class="input-group mb-3">
       <span class="input-group-text" id="basic-addon1">CZK</span>
-      <input type="number" class="form-control" id="price" name="campground[price]" placeholder="0.00" aria-label="0.00" aria-describedby="basic-addon1" value="<%= camp.price %>">
+      <input type="string" class="form-control" id="price" name="campground[price]" placeholder="0.00" aria-label="0.00" aria-describedby="basic-addon1" value="<%= camp.price %>" required>
     </div>
   </div>
   <div class="m-2">
     <label for="location" class="form-label" >Popis: </label>
-    <textarea type="text" id="description" name="campground[description]" class="form-control"><%= camp.description %></textarea>
+    <textarea type="text" id="description" name="campground[description]" class="form-control" required><%= camp.description %></textarea>
   </div>
 
   <button type="submit" class="btn btn-dark mt-2">Upravit Camp</button>
