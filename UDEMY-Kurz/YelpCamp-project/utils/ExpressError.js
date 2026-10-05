@@ -1,6 +1,6 @@
 class ExpressError extends Error{
     constructor(message, statusCode){
-        super()                         // zavolám si constructor třídy Error a potom mu přidám hodnoty i guess
+        super()                         // zavolám si constructor třídy Error a potom mu přidám hodnoty a vytvořím AppError objekt
         this.message = message;
         this.statusCode = statusCode;
     }
