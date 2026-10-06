@@ -1,3 +1,29 @@
+db.users.find()
+cls
+db.farms.find()
+db.products.find()
+show collections
+cls
+clear
+db.products.find()
+cls
+show collections
+db.users.find()
+cls
+db.users.find()
+cls
+db.users.find()
+db.users.deleteOne({first: "Tomas"})
+db.users.removeOne({first: "Tomas"})
+db.users.find()
+db.users.deleteOne({first: "Tomas"})
+db.users.removeOne({first: "Tomas"})
+db.users.find()
+show collections
+db.users.removeOne
+db.users.find()
+show collections
+use relationshipDemo
 db.products.find()
 cls
 show collections
