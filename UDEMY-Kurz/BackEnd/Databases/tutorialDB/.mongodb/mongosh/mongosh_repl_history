@@ -1,3 +1,12 @@
+db.users.find( )
+db.products.find()
+show collections
+db.farms.find()
+db.farms.find/ú
+show collections
+use relationshipDemo
+show databases
+cls
 db.users.find()
 cls
 db.farms.find()
