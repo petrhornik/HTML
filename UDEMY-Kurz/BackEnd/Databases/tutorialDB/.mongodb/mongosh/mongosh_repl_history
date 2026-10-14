@@ -1,3 +1,34 @@
+cls
+cccllss
+cls
+db.tweets.find()
+db.tweets.findOneAndDelete({likes: 8600})
+cls
+])
+    }
+        }
+            "userDetails.name": "linuxEnjoyer123"
+        $match: {
+    {
+    },
+        }
+            as: "userDetails"
+            foreignField: "_id",
+            localField: "user",
+            from: "users",
+        $lookup: {
+    {
+db.tweets.aggregate([
+db.tweets.find({"user.name": "linuxEnjoyer123"})
+db.tweets.find({user: {name: "linuxEnjoyer123"}})
+db.tweets.find()
+cls
+db.tweets.find()
+db.users.find()
+db.tweets.find()
+show collections
+use relationshipDemo
+cls
 db.users.find( )
 db.products.find()
 show collections
@@ -238,4 +269,5 @@ db.dogs.insertOne({name: "Bert", age: 6, breed: "yorkshire", catFriendly: true})
 use animalShelter
 show dbs
 cls
+exitcls
 exit

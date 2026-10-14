@@ -1,7 +1,7 @@
 **Mongoose virtuals**
 
     => máme 2 typy funkcionality -> .get a .set
-        -> dají se oba napsat za 1 stejný virtuál zároveň (chainovat za sebo pomocí dotNotation)
+        -> dají se oba napsat za 1 stejný virtuál zároveň (chainovat za sebe pomocí dotNotation)
         -> virtuál potom bude schopen jak vypisovat hodnoty, tak je updatovat/manipulovat s nimi
 
     - zastupují hodnoty které ve schématu modelu/v DB nejsou přímo definovány/neexistují

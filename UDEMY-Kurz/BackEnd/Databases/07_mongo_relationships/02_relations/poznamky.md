@@ -35,8 +35,12 @@
 
 **One TO Bilions** (tweet.js)
 
-    = pokud mám příliš mnoho "child" dokumentů, tak se reference na parenta ukládá v nich namísto v parentovi na ně
-
-    - vlastně jako N:M SQL vazba (odkazovací ID u každé položky v jinné tabulce)
+    = pokud mám příliš mnoho "child" dokumentů, tak se reference na parenta ukládá přímo v nich
+    - vlastně jako N:M SQL vazba (odkazovací ID na parent položku v každé položce s ní spjatou)
 
     - child dokument obsahuje ObjectID na parenta
+
+  tip - na doplnění právě odkazovaného dokumentu místo objectID použíju přávě metodu .populate() !!!
+    - v populate lze určit jaké objectID chci "vyvolat" a jaké hodnoty z odkazovaného dokumentu importovat (když importuju jen key-val s ObjectID tak se vloží dokument celý)
+
+    - 

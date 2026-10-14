@@ -31,11 +31,25 @@ const tweetSchema = new Schema({
 // definování modelů
 
 const User = mongoose.model("User", userSchema)
-const Tweet = mongoose.model("Tweet", tweetSchema); // schéma s referencí na model User se vála až sem a model se vytvoří o řádek výš, takže je všechno OK :D
+const Tweet = mongoose.model("Tweet", tweetSchema); // schéma s referencí na model User se dává až sem a model se vytvoří o řádek výš, takže je všechno OK :D
 
 // definování funkcí
 
 const makeTweets = async () => {
-    const u = new User({username: "linuxEnjoyer123", text: "21"});
-    const newTweet = new Tweet({text: "Fedora is better than Arch, fight me!", likes: 86})
+    //const user = new User({username: "linuxEnjoyer123", age: "21"});
+    const user = await User.findOne({username: "linuxEnjoyer123"});
+    const newTweet = new Tweet({text: "Ubuntu is actually not that bad...", likes: 8600})
+    newTweet.user = user; // přiřazení reference na uživatele
+    //user.save();
+    newTweet.save();
 };
+
+const findLatestTweet = async () => {
+    const foundTweet = await Tweet.find({}).populate("user", "username");  // populate na doplňění dokumentů namísto odkazovacích objectID
+    console.log(foundTweet);
+};
+
+//makeTweets();
+
+findLatestTweet();
+ 
