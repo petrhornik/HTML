@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index dostupných farem</title>
+</head>
+<body>
+    <h1>List dostupných farem</h1>
+    <ul>
+        <% for (let item of existingFarms) { %>
+            <li><%= item.name %></li>
+        <% } %>
+    </ul>
+
+    <a href="/farms/new">Vytvořit novou farmu</a>
+</body>
+</html>

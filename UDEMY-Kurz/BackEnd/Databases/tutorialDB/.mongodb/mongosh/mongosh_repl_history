@@ -1,3 +1,14 @@
+db.farms.find()
+cls
+db.farms.findOneAndDelete({_id: ObjectId('6acff8fdf156adc361d7b06c')})
+db.farms.findOneAndDelete({id: '6acff8fdf156adc361d7b06c'})
+db.farms.find()
+db.farms.findOneAndDelete({_id: '6acff8fdf156adc361d7b06c'})
+db.farms.find()
+db.products.find()
+show collections
+use relationships_n_express
+show databases
 cls
 cccllss
 cls
@@ -269,5 +280,4 @@ db.dogs.insertOne({name: "Bert", age: 6, breed: "yorkshire", catFriendly: true})
 use animalShelter
 show dbs
 cls
-exitcls
 exit
