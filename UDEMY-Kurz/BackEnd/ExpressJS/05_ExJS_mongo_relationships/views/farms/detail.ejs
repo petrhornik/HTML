@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail farmy</title>
+</head>
+<body>
+    <h1>Detail farmy</h1>
+    <p><strong>název: </strong><%= farm.name %></p>
+    <p><strong>město: </strong><%= farm.city %></p>
+    <p><strong>e-mail: </strong><%= farm.email %></p>
+    <a href="/farms/<%= farm._id %>/products/new">Přidat produkt</a>
+    <a href="/farms">Zpět na index farem</a>
+    <h3>Nabízené produkty</h3>
+    <ul>
+        <% for(const product of farm.products){ %>
+        <li><%= product.name %> - <a href="/products/<%= product._id %>">Zobrazit detail</a></li>
+    <% } %>
+    </ul>
+</body>
+</html>

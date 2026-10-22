@@ -1,3 +1,21 @@
+cls
+clear
+cls
+db.farms.find()
+db.farms.find({_id: '6acffca882bfc522c4133442'})
+db.farms.findById('6acffca882bfc522c4133442')
+show collections
+db.products.find({name: "Syrecek"}).populate()
+db.products.find({name: "Syrecek"})
+cls
+db.products.find()
+db.farms.find()
+cls
+db.farms.find()
+cls
+use relationships_n_express
+show databases
+cls
 db.farms.find()
 cls
 db.farms.findOneAndDelete({_id: ObjectId('6acff8fdf156adc361d7b06c')})

@@ -9,7 +9,7 @@
     <h1>List dostupných farem</h1>
     <ul>
         <% for (let item of existingFarms) { %>
-            <li><%= item.name %></li>
+            <li><a href="/farms/<%= item._id %>"><%= item.name %></a></li>
         <% } %>
     </ul>
 

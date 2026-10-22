@@ -7,8 +7,9 @@
 </head>
 <body>
     <h1>Vytvořit nový produkt</h1>
+    <p><strong>Pro farmu: </strong><%= farm.name %></p>
 
-    <form action="/products/new" method="post">
+    <form action="/farms/<%= farm._id %>/products/new" method="post">
         <div>
             <label for="name">Název: </label>
             <input type="text" name="name">
@@ -27,6 +28,7 @@
         </div>
         <button>Submit</button>
     </form>
+    <a href="/farms/<%= farm._id %>">Zpět na detail farmy</a>
 </body>
 <style>
     div{

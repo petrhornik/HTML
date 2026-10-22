@@ -13,6 +13,7 @@
         <hr>
         <p>Cena: <b><%= resultProduct.price %></b></p>
         <p>Kategorie: <a href="/products?category=<%= resultProduct.category %>"><b><%= resultProduct.category %></b></a></p>
+        <p>Producent: <a href="/farms/<%= resultProduct.farm._id %>"><%= resultProduct.farm.name %></a></p>
     </section>
 
     <a class="move" href="/products">Zpět</a>

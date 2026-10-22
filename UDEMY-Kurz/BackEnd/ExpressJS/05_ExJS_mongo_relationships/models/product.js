@@ -20,7 +20,7 @@ const productSchema = new Schema({
     },
     farm: { // odkazování na parent (farmu) zdde tvořeného dokumentu
         type: Schema.Types.ObjectId,
-        refs: "Farm",   // referencujeme položku používající model Farm (nšco z kolekce farms v DB)
+        ref: "Farm",   // referencujeme položku používající model Farm (nšco z kolekce farms v DB)
     }
 });
 

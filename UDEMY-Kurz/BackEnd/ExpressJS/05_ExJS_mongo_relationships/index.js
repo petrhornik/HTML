@@ -48,17 +48,48 @@ app.post("/farms/new", async (req,res) => {
     res.redirect("/farms");
 });
 
+app.delete("/farms/delete/:id", async (req,res) => {
+    const {id} = req.params;
+    const farm = await Farm.findByIdAndDelete(id)
+})
+
+app.get("/farms/:id", async (req,res) => {
+    const {id} = req.params;
+    const farm = await Farm.findById(id).populate("products"); // populate - nahrazení ObjectID za celý dokument
+    res.render("farms/detail", {farm});
+})
+
+// nested routing - tvorba produktu pro konkrétní farmu
+
+app.get("/farms/:id/products/new", async (req,res) => { // tip - samotná routa mi nic nenestuje musím si to udělat v {}
+    const {id} = req.params;
+    const farm = await Farm.findById(id);
+    res.render("products/new", {categories, farm});
+})
+
+app.post("/farms/:id/products/new", async (req,res) =>{
+    const {id} = req.params;
+    const farm = await Farm.findById(id);
+    const {name, price, category} = req.body;
+    const newProduct = new Product({name, price, category});
+    farm.products.push(newProduct); // přidání ObjectID do dokumentu farmy (one to many vazba)
+    newProduct.farm = farm; // (one to bilions vazba) - dám objectID farmy na samotný child dokument
+    await farm.save();
+    await newProduct.save();
+    res.redirect(`/farms/${id}`);
+})
+
 // PRODUCT ROUTY
 
 app.get("/products", async (req,res) => {       
     try{
         const {category} = req.query;
         if (category){
-            const products = await Product.find({category});
+            const products = await Product.find({category}).populate("farm");
             res.render("products/index", {products, category});
         }else{
             const products = await Product.find({});
-            res.render("products/index", {products, category: "All"});
+            res.render("products/index", {products, category: "All"}).populate("farm");
         }
     }catch(e){
         next(e);
@@ -88,9 +119,10 @@ const wrapAsync = (fn) => {
 }
     
 //detail produktu
-app.get("/products/:id", wrapAsync(async (req, res, next) => {  
+app.get("/products/:id", wrapAsync(async (req, res, next) => {  // upraveno pro vypsání farmy do které produkt náleží
         const {id} = req.params;
-        const resultProduct = await Product.findById(id);
+        const resultProduct = await Product.findById(id).populate("farm");
+        console.log(resultProduct)
         if(!resultProduct){
             throw new AppError("Produkt nenalezen...", 404);
         };
