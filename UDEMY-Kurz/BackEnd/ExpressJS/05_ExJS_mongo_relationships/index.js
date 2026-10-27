@@ -48,9 +48,11 @@ app.post("/farms/new", async (req,res) => {
     res.redirect("/farms");
 });
 
-app.delete("/farms/delete/:id", async (req,res) => {
+app.delete("/farms/:id/delete", async (req,res) => {
     const {id} = req.params;
     const farm = await Farm.findByIdAndDelete(id)
+    console.log("Mažu farmu...(request zpracován!)")
+    res.redirect("/farms");
 })
 
 app.get("/farms/:id", async (req,res) => {

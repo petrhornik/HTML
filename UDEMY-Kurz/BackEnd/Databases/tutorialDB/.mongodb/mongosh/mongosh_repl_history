@@ -1,3 +1,17 @@
+db.reviews.find()
+db.reviews.deleteMany({body: ""})
+db.campgrounds.find({title: "Dusty Camp"})
+db.reviews.find()
+cls
+db.campgrounds.find()
+db.campgrounds.find({name: "Dusty Camp"})
+db.reviews.find()
+show collections
+use YelpCamp-project
+db.farms.find()
+use relationships_n_express
+cls
+exit
 cls
 clear
 cls

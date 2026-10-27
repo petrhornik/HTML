@@ -16,4 +16,11 @@ module.exports.campgroundSchema = Joi.object({
   }).required(),
 });
 
-// další schémata SOON...
+// shcéma pro review model
+
+module.exports.reviewSchema = Joi.object({
+  review: Joi.object({
+    body: Joi.string().required(),
+    rating: Joi.number().required(),
+  }).required(), // pokud se chci ujistit že vůbec přidou ony data, tak i objekt samotný musí být required!!!
+});

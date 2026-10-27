@@ -14,11 +14,12 @@ const catchAsync = require("./utils/catchAsync.js");
 
 // import nástroje pro validaci dat (JOI) a schématu ze souboru (s campgroundSchema je už import JOI obsažen tak bude fungovat i zde bez problémů)
 
-const {campgroundSchema} = require("./utils/joiSchemas.js");
+const {campgroundSchema, reviewSchema} = require("./utils/joiSchemas.js");
 
 // import modelů
 const Campground = require("./models/campground");
 const { stat } = require("fs");
+const Review = require("./models/review.js")
 
 
 // connection do DB -> v kurzu už depricated způsob, tak jsem z toho uvařil tenhle mess (v praxi používat klasicky .then promise)
@@ -44,12 +45,24 @@ const JoiValidateCampgroud = (req,res,next) => {
     // volám si sem na validaci schéma ze ./utils/joiSchemas.js
     const {error} = campgroundSchema.validate(req.body); // provede validaci celého req.body jestli splňuje podmínky definované ve schématu a vrací BOOLEAN
     if (error){
-        console.dir(error.details)
         const errMsg = error.details.map(element => element.message).join(","); // .map mi přeloopuje přes array objektů s chybami a z každého objektu (element) mi vezme message, následně ze všech získaných message udělá array, pomocí .join se mi položky v arrayi spojí do společného stringu s použítím specifikovaného "děliče"
-        throw new ExpressError( errMsg , 403); // pokud validační objekt najde nesrovnalost mezi Joi schématem a requestem vrátí objekt obsahující error jinak ne -> proto kontroluji právě ten
+        throw new ExpressError(errMsg , 403); // pokud validační objekt najde nesrovnalost mezi Joi schématem a requestem vrátí objekt obsahující error jinak ne -> proto kontroluji právě ten
     } else {
         next(); // pokud je vše v pořádku pokračuju další fcí
     };
+};
+
+// JOI validace pro review
+
+const JoiValidateReview = (req,res,next) => {
+    const {error} = reviewSchema.validate(req.body);
+    if(error){
+        const errMsg = error.details.map(element => element.message).join(",");
+        throw new ExpressError(errMsg , 403);
+    } else{
+        next(); // není chyba = gut = pokračuj :D
+    }
+
 };
 
 
@@ -79,7 +92,7 @@ app.post("/campgrounds", JoiValidateCampgroud, catchAsync(async (req,res,next) =
 // detail jednoho campu
 app.get("/campgrounds/:id", async (req,res) => {
     const {id} = req.params;
-    const camp = await Campground.findOne({_id: id});
+    const camp = await Campground.findOne({_id: id}).populate("reviews");
     res.render("campgrounds/show", {camp});
 });
 
@@ -104,6 +117,21 @@ app.delete("/campgrounds/:id", async (req,res) => {
     await Campground.findOneAndDelete({_id: id});
     res.redirect("/campgrounds");
 })
+
+/* PRIDANI FUNKCIONALITY PRO REVIEWS */
+
+// přidání recenze
+
+app.post("/campgrounds/:id/reviews", JoiValidateReview, catchAsync(async (req,res) => {    // vyhledá camp a vytvoří z requestu review, násldně review přidá do arraye v campground kde si díky schema uloží jen ID, potom se uloží jak camp tak review
+    const {id} = req.params;
+    const {body, rating} = req.body.review;
+    const camp = await Campground.findById(id);
+    const review = new Review({body: body, rating: rating});
+    camp.reviews.push(review);
+    await review.save();
+    await camp.save();
+    res.redirect(`/campgrounds/${camp._id}`);
+}));
 
 // více ukázek error handlingu
 

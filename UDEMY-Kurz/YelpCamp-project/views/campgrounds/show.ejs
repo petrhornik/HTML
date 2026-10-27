@@ -26,3 +26,36 @@
     </div>
   </div>
 </section>
+
+<section class="mt-lg-3 d-flex flex-column align-items-center" id="review">
+    <h2>Ohodnoťte nás...</h2>  
+    <section class="d-flex gap-5 justify-content-center">
+      <div>
+    <div class="d-flex border border-2 mt-4" id="review-input">
+      <form action="/campgrounds/<%= camp._id %>/reviews" method="POST" class="validatedForm" novalidate>
+        <div class="p-3">
+              <label class="form-label" for="rating">Míra hodnocení</label>
+              <input class="form-range" type="range" id="rating" name="review[rating]" step="1" max="5" min="0">
+        </div>
+        <div class="p-3">
+          <label class="form-label" for="body">Recenze</label>
+          <textarea class="form-control" name="review[body]" id="body" rows="3" cols="30" required></textarea> <!-- zase používám grouping pro snažší rozlišení položek requestu -->
+          <div class="valid-feedback">
+            To by šlo :D
+          </div>
+        </div>
+        <button class="btn btn-success m-3" >Odeslat</button>  
+      </form>
+    </div>
+      </div>
+    
+    <div class="d-flex flex-column mt-4" id="review-dispaly">
+      <% for (const review of camp.reviews){ %>
+        <div class="p-2 m-3 card card-body">
+          <p><%= review.body %></p>
+          <p><%= review.rating %>/5</p>
+        </div>
+      <% } %>
+    </div>
+    </section>
+</section>

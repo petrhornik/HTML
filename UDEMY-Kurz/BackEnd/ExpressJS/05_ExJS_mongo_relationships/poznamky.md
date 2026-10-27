@@ -37,4 +37,18 @@
 
     - pomocí farm -> _id smažu samotnou farmu a všechny přidružené produkty
 
-    - 
+    - musím smaza i veškeré child komponenty asociované s farmou
+
+    - opět používám delete request pomocí method-override
+
+    - pro mazání položek lze použít mongoose middleware
+
+    - fce. co používám pro mazání farmy lze použít na triggerování middleware findOneAndDelete viz.: farm.js
+
+    - máme actually 2 typy middleware
+      - document -> keyword this odkazuje na odkazovaný dokument
+      - query -> keyword this odkazuje na query requestu
+
+    - middleware pro konkrétní schémata/modely se definují přímo vně nich a mají 2 druhy
+      - pre - před provedením requestu
+      - post - po provedení requestu
