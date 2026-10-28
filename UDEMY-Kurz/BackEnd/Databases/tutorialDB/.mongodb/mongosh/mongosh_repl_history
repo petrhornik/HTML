@@ -1,3 +1,17 @@
+show databases
+cls
+db.reviews.find()
+cls
+db.reviews.deleteMany({body: "STUUUUBIT"})
+db.reviews.delelteMany({body: "STUUUUBIT"})
+db.reviews.find()
+cls
+db.reviews.deleteMany({body: "LOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLO"})
+db.reviews.find()
+cls
+db.reviews.find()
+use YelpCamp-project
+cls
 db.reviews.find()
 db.reviews.deleteMany({body: ""})
 db.campgrounds.find({title: "Dusty Camp"})

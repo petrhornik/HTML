@@ -49,11 +49,14 @@
     </div>
       </div>
     
-    <div class="d-flex flex-column mt-4" id="review-dispaly">
+    <div class="d-flex flex-column mt-4 w-75" id="review-dispaly">
       <% for (const review of camp.reviews){ %>
         <div class="p-2 m-3 card card-body">
           <p><%= review.body %></p>
           <p><%= review.rating %>/5</p>
+          <form action="/campgrounds/<%= camp._id %>/reviews/<%= review._id %>/delete?_method=DELETE" method="POST">
+            <button class="btn btn-sm btn-danger" >Smazat</button>
+          </form>
         </div>
       <% } %>
     </div>

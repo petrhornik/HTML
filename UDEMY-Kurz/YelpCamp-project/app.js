@@ -1,5 +1,4 @@
 // centrální soubor celé web. aplikace odkud se všechno řídí
-
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -8,18 +7,12 @@ const ejsMate = require("ejs-mate"); // engine pro ejs, který umožňuje použ�
 const methodOverride = require("method-override");
 
 // import custom error class a error function wrapperu
-
 const ExpressError = require("./utils/ExpressError.js");
-const catchAsync = require("./utils/catchAsync.js");
 
-// import nástroje pro validaci dat (JOI) a schématu ze souboru (s campgroundSchema je už import JOI obsažen tak bude fungovat i zde bez problémů)
 
-const {campgroundSchema, reviewSchema} = require("./utils/joiSchemas.js");
-
-// import modelů
-const Campground = require("./models/campground");
-const { stat } = require("fs");
-const Review = require("./models/review.js")
+// import routů ze souborů oddělených pře expressJS router
+const campgroundsRoutes = require("./routes/campgrounds.js")
+const reviewRoutes = require("./routes/review.js")
 
 
 // connection do DB -> v kurzu už depricated způsob, tak jsem z toho uvařil tenhle mess (v praxi používat klasicky .then promise)
@@ -39,114 +32,35 @@ app.engine("ejs", ejsMate); // udává ře místo výchozího enginu ejs se vyu�
 app.use(express.urlencoded({extended: true})); // bez tohoto mi express nebude parsovat HTML formy v POST requestu
 app.use(methodOverride("_method"));     // díky tomuto můžu používat i další CRUD metody mimo GET, POST
 
-// tvorba JOI schema validačního middleware
-
-const JoiValidateCampgroud = (req,res,next) => {
-    // volám si sem na validaci schéma ze ./utils/joiSchemas.js
-    const {error} = campgroundSchema.validate(req.body); // provede validaci celého req.body jestli splňuje podmínky definované ve schématu a vrací BOOLEAN
-    if (error){
-        const errMsg = error.details.map(element => element.message).join(","); // .map mi přeloopuje přes array objektů s chybami a z každého objektu (element) mi vezme message, následně ze všech získaných message udělá array, pomocí .join se mi položky v arrayi spojí do společného stringu s použítím specifikovaného "děliče"
-        throw new ExpressError(errMsg , 403); // pokud validační objekt najde nesrovnalost mezi Joi schématem a requestem vrátí objekt obsahující error jinak ne -> proto kontroluji právě ten
-    } else {
-        next(); // pokud je vše v pořádku pokračuju další fcí
-    };
-};
-
-// JOI validace pro review
-
-const JoiValidateReview = (req,res,next) => {
-    const {error} = reviewSchema.validate(req.body);
-    if(error){
-        const errMsg = error.details.map(element => element.message).join(",");
-        throw new ExpressError(errMsg , 403);
-    } else{
-        next(); // není chyba = gut = pokračuj :D
-    }
-
-};
-
 
 // samotný BE
+
 app.get("/", (req,res) => {
     res.render("home")
 })
 
-// index všech campů
-app.get("/campgrounds", async (req,res) => {
-    const campgrounds = await Campground.find({});
-    res.render("campgrounds/index", {campgrounds})
-});
 
-// přidání nového campu
+// import routeru pro campgrounds
+app.use("/campgrounds", campgroundsRoutes);
 
-app.get("/campgrounds/new", (req,res) => {
-    res.render("campgrounds/new");
-});
+// import routeru pro reviews
+app.use("/campgrounds/:id/reviews", reviewRoutes);
 
-app.post("/campgrounds", JoiValidateCampgroud, catchAsync(async (req,res,next) => {   // detekce erroru všude uvnitř tzv. wrapper funkce triggerující error handler
-    const newCamp = new Campground(req.body.campground);
-    await newCamp.save();
-    res.redirect(`/campgrounds/${newCamp._id}`);
-}));
-
-// detail jednoho campu
-app.get("/campgrounds/:id", async (req,res) => {
-    const {id} = req.params;
-    const camp = await Campground.findOne({_id: id}).populate("reviews");
-    res.render("campgrounds/show", {camp});
-});
-
-//editace 1 campu
-
-app.get("/campgrounds/:id/edit", async (req,res) => {
-    const {id} = req.params;
-    const camp = await Campground.findOne({_id: id});
-    res.render("campgrounds/edit", {camp});
-});
-
-app.put("/campgrounds/:id", JoiValidateCampgroud, catchAsync(async (req,res) => {
-    const {id} = req.params;
-    await Campground.findOneAndUpdate({_id: id}, req.body.campground);
-    res.redirect(`/campgrounds/${id}`)
-}))
-
-// smazání campu
-
-app.delete("/campgrounds/:id", async (req,res) => {
-    const {id} = req.params;
-    await Campground.findOneAndDelete({_id: id});
-    res.redirect("/campgrounds");
-})
-
-/* PRIDANI FUNKCIONALITY PRO REVIEWS */
-
-// přidání recenze
-
-app.post("/campgrounds/:id/reviews", JoiValidateReview, catchAsync(async (req,res) => {    // vyhledá camp a vytvoří z requestu review, násldně review přidá do arraye v campground kde si díky schema uloží jen ID, potom se uloží jak camp tak review
-    const {id} = req.params;
-    const {body, rating} = req.body.review;
-    const camp = await Campground.findById(id);
-    const review = new Review({body: body, rating: rating});
-    camp.reviews.push(review);
-    await review.save();
-    await camp.save();
-    res.redirect(`/campgrounds/${camp._id}`);
-}));
 
 // více ukázek error handlingu
-
 app.all("/{*path}", (req,res,next) => { // provede se najémkoli http requestu na určitou routu -> v tomto případě, úplně na každou routu (to v "" určuje všechny routy)
     next(new ExpressError("Cesta nenalezena :(", 404));      // bude triggerovat pouze u všeho co už není nějak specifikováno výše či pokud se někde výš nevrátí error objekt...
 });
 
-// MAIN error handler
 
+// MAIN error handler
 app.use((err,req,res,next) => {
     const {statusCode = 500} = err;  // vytáhnu hodnoty z mého custom error objektu (z mé custom třidy) a nastavím jim defaultní hodnoty, kdyby v sobě nic neobsahovaly
     if (!err.message) err.message = "Vyskytla se interní chyba";
     err.statusCode = statusCode;    // dopsání kvůli tomu aby se mi to passnulo do renderu v error objektu
     res.status(statusCode).render("error", {err});     // pomocí res.status() můžu zpět poslat svůj specifický status kód co se zobrazí v responze ze serveru v prohlížeči
 })
+
 
 app.listen(3000, () => {
     console.log("GUT! -> jedu na portu 3000");

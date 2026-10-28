@@ -9,3 +9,14 @@
 
     - validace pomocí bootstrapu (custom validatedForm class) a JOI schémat
 
+    - smazání review se provede pomocí routy kde bude jak id campu tak id review
+      - s využitím $pull operátoru z mongo
+
+    - updatnutí funkcionality smazání celého campu aby se smazaly i reviews
+
+2 druhy mongoose middleware
+
+  - document
+      =>  
+  - query
+      =>
