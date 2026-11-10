@@ -11,7 +11,8 @@ const catchAsync = require("../utils/catchAsync.js");
 const Campground = require("../models/campground");
 
 // import schématu ze souboru (s campgroundSchema je už import JOI obsažen tak bude fungovat i zde bez problémů)
-const {campgroundSchema} = require("../utils/joiSchemas.js")
+const {campgroundSchema} = require("../utils/joiSchemas.js");
+const campground = require("../models/campground");
 
 
 // tvorba JOI schema validačního middleware
@@ -43,6 +44,7 @@ router.get("/new", (req,res) => {
 router.post("/", JoiValidateCampgroud, catchAsync(async (req,res,next) => {   // detekce erroru všude uvnitř tzv. wrapper funkce triggerující error handler
     const newCamp = new Campground(req.body.campground);
     await newCamp.save();
+    req.flash("success", "Camp úspěšně vytvořen!!")
     res.redirect(`/campgrounds/${newCamp._id}`);
 }));
 
@@ -50,6 +52,10 @@ router.post("/", JoiValidateCampgroud, catchAsync(async (req,res,next) => {   //
 router.get("/:id", async (req,res) => {
     const {id} = req.params;
     const camp = await Campground.findOne({_id: id}).populate("reviews");
+    if(!camp){
+        req.flash("error", "Stránka tohoto campu již neexistuje!!");
+        return res.redirect("/campgrounds"); // tip - u redirectu musím dát celou routu...
+    }
     res.render("campgrounds/show", {camp});
 });
 
@@ -57,12 +63,17 @@ router.get("/:id", async (req,res) => {
 router.get("/:id/edit", async (req,res) => {
     const {id} = req.params;
     const camp = await Campground.findOne({_id: id});
+    if(!camp){
+        req.flash("error", "Snažíte se upravit neexistující camp!!");
+        return res.redirect("/campgrounds");
+    }
     res.render("campgrounds/edit", {camp});
 });
 
 router.put("/:id", JoiValidateCampgroud, catchAsync(async (req,res) => {
     const {id} = req.params;
     await Campground.findOneAndUpdate({_id: id}, req.body.campground);
+    req.flash("success", "Editace proběhla úspěšně!")
     res.redirect(`/campgrounds/${id}`)
 }))
 
@@ -70,6 +81,7 @@ router.put("/:id", JoiValidateCampgroud, catchAsync(async (req,res) => {
 router.delete("/:id", async (req,res) => {
     const {id} = req.params;
     const camp = await Campground.findOneAndDelete({_id: id});
+    req.flash("success", "Smazání proběhlo úspěšně!")
     res.redirect("/campgrounds");
 })
 

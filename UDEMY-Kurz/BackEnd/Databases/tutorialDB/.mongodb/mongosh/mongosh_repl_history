@@ -1,3 +1,4 @@
+cls
 show databases
 cls
 db.reviews.find()

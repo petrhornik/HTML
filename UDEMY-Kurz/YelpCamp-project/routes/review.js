@@ -37,6 +37,7 @@ router.post("/", JoiValidateReview, catchAsync(async (req,res) => {    // vyhled
     camp.reviews.push(review);
     await review.save();
     await camp.save();
+    req.flash("success", "Recenze byla přidána.")
     res.redirect(`/campgrounds/${camp._id}`);
 }));
 
@@ -45,6 +46,7 @@ router.delete("/:reviewID/delete", catchAsync(async (req,res) => {
     const {id, reviewID} = req.params;
     await Campground.findByIdAndUpdate(id, {$pull: {reviews: reviewID}}); // pomocí operátoru pull se mi vytáhne z arraye pryč specifikovaná hodnota
     await Review.findByIdAndDelete(reviewID);
+    req.flash("success", "Recenze byla odstraněna.")
     res.redirect(`/campgrounds/${id}`);
 }))
 

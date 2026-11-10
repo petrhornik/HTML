@@ -5,6 +5,8 @@ const path = require("path");
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate"); // engine pro ejs, který umožňuje používat layouty
 const methodOverride = require("method-override");
+const session = require("express-session"); // package pro správu sessions v projektu - přímo od expressu
+const flash = require("connect-flash"); // package pro flash messages
 
 // import custom error class a error function wrapperu
 const ExpressError = require("./utils/ExpressError.js");
@@ -32,6 +34,29 @@ app.engine("ejs", ejsMate); // udává ře místo výchozího enginu ejs se vyu�
 app.use(express.urlencoded({extended: true})); // bez tohoto mi express nebude parsovat HTML formy v POST requestu
 app.use(methodOverride("_method"));     // díky tomuto můžu používat i další CRUD metody mimo GET, POST
 
+app.use(express.static(path.join(__dirname, "public"))); // nastavení složky pro serving statických assetů - (public složky :P)
+
+// přidání BE sessions s pomocí express-session package/rozšíření
+const sessionConfig = { // veškerá konfigurace funkcionality sessions v tomto projektu
+    secret: "totojenejakysecretstringproovereniintegritysessions",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {   // konfigurace session id cookie
+        httpOnly: true, // prevence odcizení cookie při pokusu o XSS    (enabled by default...)
+        expires: Date.now() + 1000 * 60 * 60 * 24 * 7, // nastavení expirace po týdnu od založení
+        maxAge: 1000 * 60 * 60 * 24 * 7,
+    },
+};
+app.use(session(sessionConfig)); //v tuto chvíli pouze do memory-store
+
+// přidání funkcionality pro flash messages
+app.use(flash());
+
+app.use((req,res,next) => {
+    res.locals.success = req.flash("success"); // díky res.locals.naz_prom se mi bude automaticky importovat do každého res kde middleware budu používat a tedy i do EJS souborů
+    res.locals.error = req.flash("error");
+    next(); // zakončení middlewre VŽDY!!
+})
 
 // samotný BE
 
