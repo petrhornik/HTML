@@ -55,4 +55,4 @@
 
     - mám pro success a error
 
-    - erro flash zde mám např pro zobrazení při pokusu o render neexistující stránky apod.
+    - error flash zde mám např pro zobrazení při pokusu o render neexistující stránky apod.
